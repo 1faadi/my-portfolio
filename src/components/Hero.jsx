@@ -1,4 +1,3 @@
-import React from 'react'
 import { HERO_CONTENT } from '../constants'
 import profilePic from "../assets/kevinRushProfile1.jpg"
 import { motion } from "motion/react"
@@ -21,7 +20,7 @@ const Hero = () => {
             <motion.h1 variants={container(0)}
               initial="hidden"
               animate="visible"
-              className='pb-16 text-6xl font-thin tracking-tight lg:mt-16 lg:text-8xl'>Syed Fahad Abbas</motion.h1>
+              className='max-w-[22ch] pb-12 text-5xl font-thin tracking-tight sm:text-6xl lg:mt-16 lg:max-w-none lg:pb-16 lg:text-7xl xl:text-8xl'>Syed Fahad Abbas Kazmi</motion.h1>
             <motion.span variants={container(0.5)}
               initial="hidden"
               animate="visible" className='bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text text-3xl tracking-tight text-transparent'>FULL-STACK · AI SYSTEMS · AUTOMATION</motion.span>
@@ -37,7 +36,7 @@ const Hero = () => {
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 1, delay: 1.2 }}
               src={profilePic}
-              alt="profilePic"
+              alt="Syed Fahad Abbas Kazmi"
               className="rounded-lg brightness-90" />
 
           </div>

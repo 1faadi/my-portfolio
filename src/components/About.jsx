@@ -84,9 +84,9 @@ const About = () => {
 
   return (
     <section ref={sectionRef} className="border-b border-neutral-900 pb-16">
-      <h1 className="my-20 text-center text-4xl">
+      <h2 className="my-20 text-center text-4xl">
         About <span className="text-neutral-500">Me</span>
-      </h1>
+      </h2>
       <div className="flex flex-wrap items-start gap-10 lg:gap-14 xl:gap-16">
         <motion.div
           whileInView={{ opacity: 1, x: 0 }}
@@ -99,7 +99,7 @@ const About = () => {
             <img
               className="h-auto w-full max-w-3xl rounded-2xl object-cover object-center brightness-90 shadow-xl shadow-black/50 lg:max-w-none"
               src={aboutImg}
-              alt="Syed Fahad Abbas"
+              alt="Syed Fahad Abbas Kazmi"
             />
           </div>
         </motion.div>

@@ -27,9 +27,9 @@ const TECH_STOCK_IMAGES = [
   "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=380&fit=crop&auto=format",
 ];
 
-export const HERO_CONTENT = `I am Syed Fahad Abbas, a full-stack software engineer specializing in AI-powered systems, modern web development, and intelligent automation. My expertise spans across building scalable applications using Next.js, React, and backend architectures integrated with databases, APIs, and authentication systems.`;
+export const HERO_CONTENT = `I am Syed Fahad Abbas Kazmi, a full-stack software engineer specializing in AI-powered systems, modern web development, and intelligent automation. My expertise spans across building scalable applications using Next.js, React, and backend architectures integrated with databases, APIs, and authentication systems.`;
 
-export const ABOUT_TEXT = `I am Syed Fahad Abbas, a full-stack software engineer specializing in AI-powered systems, modern web development, and intelligent automation. My expertise spans across building scalable applications using Next.js, React, and backend architectures integrated with databases, APIs, and authentication systems.
+export const ABOUT_TEXT = `I am Syed Fahad Abbas Kazmi, a full-stack software engineer specializing in AI-powered systems, modern web development, and intelligent automation. My expertise spans across building scalable applications using Next.js, React, and backend architectures integrated with databases, APIs, and authentication systems.
 
 I have a strong focus on Artificial Intelligence engineering, particularly in designing and deploying RAG (Retrieval-Augmented Generation) systems using vector databases like Qdrant, embedding pipelines, and LLM integrations through tools such as the Vercel AI SDK. I build domain-specific AI assistants capable of reasoning over structured and unstructured data, including applications in healthcare, analytics, and conversational systems.
 
@@ -218,7 +218,8 @@ const PROJECT_ENTRIES = [
   },
   {
     title: "my-portfolio",
-    description: "Personal portfolio site (this project’s live deployment).",
+    description:
+      "Personal portfolio site for Syed Fahad Abbas Kazmi (this project’s live deployment).",
     technologies: ["JavaScript", "React", "Vite"],
   },
   {
@@ -253,5 +254,13 @@ export const PROJECTS = PROJECT_ENTRIES.map((project, index) => ({
 export const CONTACT = {
   address: "I-8/4 Islamabad ",
   phoneNo: "+92 304 1646924 ",
-  email: "fahadnshuu1@gmail.com",
+  email: "fahadkazmi.dev@gmail.com",
+};
+
+/** Profile URLs for nav + structured data (JSON-LD). */
+export const SOCIAL_PROFILES = {
+  linkedin: "https://www.linkedin.com/in/syed-fahad-abbas-kazmi-362a23255/",
+  github: "https://github.com/1faadi",
+  twitter: "https://x.com/rollno125",
+  instagram: "https://www.instagram.com/yrrrrfahad_/",
 };
