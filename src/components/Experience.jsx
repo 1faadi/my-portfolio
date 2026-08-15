@@ -1,46 +1,66 @@
-import React from 'react'
-import { EXPERIENCES } from '../constants'
-import { motion } from "motion/react"
+import { motion } from "motion/react";
+import { EXPERIENCES } from "../constants";
 
 const Experience = () => {
   return (
-    <div className='border-b border-neutral-900 pb-4'>
-      <motion.h2 
-      whileInView={{opacity: 1, y:0}}
-      initial={{opacity: 0, y: -100}}
-      transition={{duration: 0.5}}  
-      className='my-20 text-center text-4xl'>Experience</motion.h2>
-      <div>
-        {EXPERIENCES.map((experience, index)=>(
-            <div key={index} className='mb-8 flex flex-wrap lg:justify-center'>
-                <motion.div 
-                whileInView={{opacity:1, x:0}}
-                initial={{opacity:0, x: -100}}
-                transition={{duration: 1}}
-                className='w-full lg:w-1/4'>
-                <p className='mb-2 text-sm text-neutral-400'>{experience.year}</p>
-                </motion.div>
-                <motion.div 
-                whileInView={{opacity:1, x:0}}
-                initial={{opacity:0, x: 100}}
-                transition={{duration: 1}}
-                className="w-full max-w-xl lg:w-3/4">
-                <h6 className='mb-2 font-semibold'>
-                    {experience.role} - <span className='text-sm text-purple-100'>
-                        {experience.company}
-                    </span>
-                </h6>
-                <p className='mb-4 text-neutral-400'>{experience.description}</p>
-                {experience.technologies.map((tech, index) => (
-                    <span key={index} className='mr-2 mt-4 rounded bg-neutral-900 px-2 py-1 text-sm font-medium text-purple-800'>{tech}</span>
-                ))}
-                </motion.div>
-            </div>
+    <section
+      id="experience"
+      className="scroll-mt-24 border-b border-neutral-900 pb-20"
+    >
+      <h2 className="my-14 text-center text-3xl font-light tracking-tight sm:my-20 sm:text-4xl">
+        Work <span className="text-neutral-500">Experience</span>
+      </h2>
 
+      <ol className="relative ml-2 border-l border-white/10 pl-6 sm:ml-4 sm:pl-10 lg:ml-6 lg:pl-12">
+        {EXPERIENCES.map((experience) => (
+          <motion.li
+            key={`${experience.company}-${experience.role}`}
+            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 32 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true, amount: 0.15 }}
+            className="relative mb-12 last:mb-0"
+          >
+            <span
+              className="absolute -left-[1.85rem] top-2 h-3 w-3 rounded-full bg-gradient-to-br from-purple-400 to-cyan-400 ring-4 ring-neutral-950 sm:-left-[2.85rem] lg:-left-[3.35rem]"
+              aria-hidden
+            />
+            <p className="mb-2 text-sm font-medium tracking-wide text-purple-300">
+              {experience.year}
+            </p>
+            <h3 className="text-lg font-semibold text-neutral-100 sm:text-xl">
+              {experience.role}
+            </h3>
+            <p className="mb-4 text-sm text-neutral-400">
+              {experience.company} · {experience.location}
+            </p>
+
+            <ul className="mb-5 max-w-3xl space-y-2">
+              {experience.highlights.map((point) => (
+                <li
+                  key={point}
+                  className="relative pl-5 text-sm leading-relaxed text-neutral-400 before:absolute before:left-0 before:top-[0.6em] before:h-1.5 before:w-1.5 before:rounded-full before:bg-purple-400/60"
+                >
+                  {point}
+                </li>
+              ))}
+            </ul>
+
+            <ul className="flex flex-wrap gap-2">
+              {experience.technologies.map((tech) => (
+                <li
+                  key={tech}
+                  className="rounded-md border border-purple-400/15 bg-purple-500/10 px-2 py-1 text-xs font-medium text-purple-200"
+                >
+                  {tech}
+                </li>
+              ))}
+            </ul>
+          </motion.li>
         ))}
-      </div>
-    </div>
-  )
-}
+      </ol>
+    </section>
+  );
+};
 
-export default Experience
+export default Experience;

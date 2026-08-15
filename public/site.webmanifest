@@ -1,0 +1,12 @@
+{
+  "name": "Syed Fahad Abbas Kazmi — AI Engineer & Full-Stack Developer",
+  "short_name": "SFAK",
+  "description": "Portfolio of Syed Fahad Abbas Kazmi — AI Engineer and Full-Stack Software Developer.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#0a0a0a",
+  "icons": [
+    { "src": "/icon.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

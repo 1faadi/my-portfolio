@@ -1,259 +1,480 @@
-/** Varied tech / workspace stock imagery (Unsplash) — not project screenshots */
-const TECH_STOCK_IMAGES = [
-  "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=380&fit=crop&auto=format",
-  "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=380&fit=crop&auto=format",
-  "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=380&fit=crop&auto=format",
-  "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=380&fit=crop&auto=format",
-  "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=380&fit=crop&auto=format",
-  "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=380&fit=crop&auto=format",
-  "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&h=380&fit=crop&auto=format",
-  "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=380&fit=crop&auto=format",
-  "https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&h=380&fit=crop&auto=format",
-  "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=380&fit=crop&auto=format",
-  "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&h=380&fit=crop&auto=format",
-  "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=600&h=380&fit=crop&auto=format",
-  "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=380&fit=crop&auto=format",
-  "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=380&fit=crop&auto=format",
-  "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600&h=380&fit=crop&auto=format",
-  "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&h=380&fit=crop&auto=format",
-  "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&h=380&fit=crop&auto=format",
-  "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=600&h=380&fit=crop&auto=format",
-  "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=380&fit=crop&auto=format",
-  "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=600&h=380&fit=crop&auto=format",
-  "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=600&h=380&fit=crop&auto=format",
-  "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&h=380&fit=crop&auto=format",
-  "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&h=380&fit=crop&auto=format",
-  "https://images.unsplash.com/photo-1587620962725-abab7fe55159?w=600&h=380&fit=crop&auto=format",
-  "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=380&fit=crop&auto=format",
+const GITHUB_USER = "1faadi";
+const repo = (name) => `https://github.com/${GITHUB_USER}/${name}`;
+
+export const PROFILE = {
+  name: "Syed Fahad Abbas Kazmi",
+  shortName: "Syed Fahad Abbas",
+  title: "AI Engineer & Full-Stack Software Developer",
+  tagline: "AI SYSTEMS · FULL-STACK · INTELLIGENT AUTOMATION",
+  location: "Islamabad, Pakistan",
+  availability: "Open to AI / full-stack roles",
+  resumePath: "/Syed-Fahad-Abbas-Resume.pdf",
+  /** Filename the browser saves as (URL stays hyphenated for a clean link). */
+  resumeFileName: "Syed Fahad Abbas Resume.pdf",
+};
+
+export const HERO_CONTENT = `I build AI-powered products end to end — RAG pipelines, agentic workflows, and computer-vision systems wrapped in fast, production-grade Next.js and Nest.js applications. Currently AI Engineer at BXTrack Solutions and Co-Founder & CTO of Traceo.`;
+
+export const HERO_STATS = [
+  { value: "3+", label: "Years shipping software" },
+  { value: "20+", label: "Products & tools built" },
+  { value: "2", label: "Companies delivered for" },
+  { value: "1", label: "Product co-founded" },
 ];
 
-export const HERO_CONTENT = `I am Syed Fahad Abbas Kazmi, a full-stack software engineer specializing in AI-powered systems, modern web development, and intelligent automation. My expertise spans across building scalable applications using Next.js, React, and backend architectures integrated with databases, APIs, and authentication systems.`;
+export const ABOUT_TEXT = `I am Syed Fahad Abbas Kazmi, a full-stack software engineer specialising in AI-powered applications and production LLM systems. I work across the whole delivery lifecycle: architecting scalable back ends, building interactive front ends, and integrating Retrieval-Augmented Generation, vector databases, and intelligent automation into real products people use.
 
-export const ABOUT_TEXT = `I am Syed Fahad Abbas Kazmi, a full-stack software engineer specializing in AI-powered systems, modern web development, and intelligent automation. My expertise spans across building scalable applications using Next.js, React, and backend architectures integrated with databases, APIs, and authentication systems.
+At BXTrack Solutions I design LLM-driven features, embeddings and retrieval pipelines, and agentic workflows built on MCP servers and custom Claude Code Skills, Hooks and Sub-agents. I build voice calling agents with Vapi, end-to-end business automations in n8n, and computer-vision pipelines using Roboflow-trained models and the Segment Anything Model.
 
-I have a strong focus on Artificial Intelligence engineering, particularly in designing and deploying RAG (Retrieval-Augmented Generation) systems using vector databases like Qdrant, embedding pipelines, and LLM integrations through tools such as the Vercel AI SDK. I build domain-specific AI assistants capable of reasoning over structured and unstructured data, including applications in healthcare, analytics, and conversational systems.
+My core stack is TypeScript, Next.js, Nest.js and React, backed by solid PHP/Laravel and database engineering fundamentals — PostgreSQL, MySQL, Supabase and Neon, with real attention to schema design and query optimisation.
 
-Beyond core AI systems, I develop developer-centric tools and automation solutions, including Chrome extensions for workflow enhancement, AI-powered testing and reporting tools, and local "Jarvis-like" agents capable of executing system-level and development tasks.
+Alongside client work I am Co-Founder & CTO of Traceo, a browser developer tool that helps developers and QA teams inspect CSS, capture visual bugs and record sessions, then share them as actionable reports. I own it end to end: product design, front-end engineering, and go-to-market.
 
-My skill set also includes building extensible platforms such as WordPress plugins, Figma plugins, and custom integrations that bridge design, development, and AI capabilities. I focus on creating practical, production-ready solutions that optimize user experience and developer efficiency.
+I am an effective communicator and a self-directed remote collaborator, with a track record of delivering high-quality, user-focused solutions on time.`;
 
-From a product and engineering perspective, I emphasize clean architecture, modular design, performance optimization, and real-world usability. I actively explore emerging technologies such as blockchain-based systems, local AI deployment, and intelligent automation pipelines to stay at the forefront of innovation.`;
+export const SKILL_GROUPS = [
+  {
+    title: "AI / ML",
+    items: [
+      "Large Language Models (LLMs)",
+      "Retrieval-Augmented Generation (RAG)",
+      "LangChain",
+      "LangGraph",
+      "LlamaIndex",
+      "Vercel AI SDK",
+      "Vector databases",
+      "Embeddings",
+      "Prompt engineering",
+      "Agentic systems",
+      "Model Context Protocol (MCP)",
+      "Computer vision (Roboflow, SAM)",
+    ],
+  },
+  {
+    title: "AI Tooling & Agentic Dev",
+    items: [
+      "MCP servers & integrations",
+      "Claude Code (Skills, Rules, Hooks, Sub-agents)",
+      "n8n workflow automation",
+      "Voice AI agents (Vapi)",
+      "Agent orchestration",
+      "AI-assisted dev (Cursor, Claude Code)",
+    ],
+  },
+  {
+    title: "Languages",
+    items: [
+      "TypeScript",
+      "JavaScript",
+      "Python",
+      "PHP",
+      "SQL",
+      "HTML5",
+      "CSS3",
+    ],
+  },
+  {
+    title: "Frameworks & Libraries",
+    items: [
+      "Next.js",
+      "React",
+      "Nest.js",
+      "Node.js",
+      "FastAPI",
+      "Laravel",
+      "jQuery",
+      "Bootstrap",
+      "Tailwind CSS",
+    ],
+  },
+  {
+    title: "Databases",
+    items: [
+      "PostgreSQL",
+      "MySQL",
+      "Supabase",
+      "Neon (serverless Postgres)",
+      "pgvector",
+      "Schema design",
+      "Query optimisation",
+    ],
+  },
+  {
+    title: "Practices",
+    items: [
+      "REST API design",
+      "Third-party integration",
+      "Responsive & cross-browser",
+      "Git",
+      "Agile delivery",
+      "Performance optimization",
+    ],
+  },
+];
 
 export const EXPERIENCES = [
   {
-    year: "June 2025 - Present",
+    year: "June 2025 — Present",
     role: "AI Engineer",
     company: "BXTrack Solutions",
-    description: `Design and ship AI-powered features: RAG pipelines, embedding workflows, and LLM integrations using the Vercel AI SDK and modern TypeScript stacks. Build retrieval systems with vector stores, prompt orchestration, and production APIs that connect models to real product data. Collaborate on architecture, evaluation, and safe deployment of domain-specific assistants alongside the broader engineering team.`,
+    location: "Islamabad, Pakistan",
+    highlights: [
+      "Design and build AI-powered features for production applications, including LLM-driven functionality, RAG pipelines and intelligent automation.",
+      "Architect and integrate vector databases and embeddings pipelines for retrieval-augmented, context-aware AI systems.",
+      "Develop agentic workflows using MCP servers and custom Claude Code Skills, Hooks and Sub-agents to automate engineering and product tasks.",
+      "Build end-to-end workflow automations with n8n, connecting APIs, databases and AI models to business processes.",
+      "Develop voice calling AI agents with Vapi, integrating telephony, LLMs and conversational flows for automated call handling.",
+      "Ship computer-vision pipelines with Roboflow-trained models and the Segment Anything Model (SAM) for detection and segmentation.",
+      "Evaluate and adopt emerging AI tooling (LangChain, LangGraph, LlamaIndex, Vercel AI SDK) to improve delivery speed and reliability.",
+    ],
     technologies: [
-      "Next.js",
-      "React",
       "TypeScript",
-      "Python",
-      "LangChain",
-      "OpenAI API",
+      "Next.js",
+      "Nest.js",
       "RAG",
-      "Qdrant",
+      "LangChain",
+      "LangGraph",
+      "LlamaIndex",
       "Vercel AI SDK",
+      "MCP",
+      "n8n",
+      "Vapi",
+      "Roboflow / SAM",
       "PostgreSQL",
-      "REST APIs",
-      "Node.js",
-      "Embeddings",
     ],
   },
   {
-    year: "2023 - June 2025",
+    year: "June 2023 — Jan 2024",
     role: "Associate Software Engineer",
     company: "BXTrack Solutions",
-    description: `Built and maintained full-stack web applications with Laravel and React, integrating REST APIs, authentication, and MySQL-backed services. Focused on reliable delivery, code quality, and working with product and QA to ship features on schedule.`,
+    location: "Islamabad, Pakistan",
+    highlights: [
+      "Designed, built and maintained full-stack web applications with Laravel and React, from database to UI.",
+      "Developed dynamic, component-based front ends in React and integrated them with Laravel back ends.",
+      "Architected and consumed RESTful APIs and integrated third-party services to extend application functionality.",
+      "Optimized performance by refining database queries and reducing load times across client projects.",
+      "Managed project timelines, scope and deliverables, coordinating with stakeholders to ship on schedule.",
+    ],
     technologies: [
-      "JavaScript",
-      "TypeScript",
       "React",
       "Laravel",
       "PHP",
       "MySQL",
       "REST APIs",
+      "JavaScript",
       "Git",
-      "Tailwind CSS",
-      "API design",
-      "Auth & sessions",
     ],
   },
   {
-    year: "2022 - 2023",
-    role: "Laravel Developer",
+    year: "Jan 2023 — May 2023",
+    role: "Laravel Developer (Remote)",
     company: "Brainiac Creative Solutions",
-    description: `Delivered Laravel web applications with responsive Blade and front-end stacks, database design, and performance-minded PHP. Implemented CRUD flows, server-side validation, and integrations that supported client business workflows.`,
-    technologies: [
-      "PHP",
-      "Laravel",
-      "Blade",
-      "MySQL",
-      "JavaScript",
-      "jQuery",
-      "HTML",
-      "CSS",
-      "Bootstrap",
-      "Git",
-      "MVC",
+    location: "Sargodha, Pakistan",
+    highlights: [
+      "Architected, developed and maintained robust, scalable web applications using the Laravel framework.",
+      "Collaborated with distributed teams over video calls, chat and email to align on requirements and resolve issues.",
     ],
+    technologies: ["Laravel", "PHP", "MySQL", "Blade", "Git", "Remote"],
+  },
+  {
+    year: "Oct 2022 — Jan 2023",
+    role: "Web Designer (Internship)",
+    company: "Brainiac Creative Solutions",
+    location: "Sargodha, Pakistan",
+    highlights: [
+      "Translated visual concepts into responsive, accessible web interfaces with HTML, CSS, Bootstrap and JavaScript.",
+      "Applied responsive design techniques with CSS media queries for consistent experiences across devices.",
+    ],
+    technologies: ["HTML5", "CSS3", "Bootstrap", "JavaScript", "jQuery"],
   },
 ];
 
-const GITHUB_USER = "1faadi";
+export const EDUCATION = [
+  {
+    degree: "BS Computer Science",
+    school: "National University of Modern Languages (NUML), Islamabad",
+    year: "Feb 2023 — Expected Jan 2027",
+  },
+  {
+    degree: "Intermediate (HSSC)",
+    school: "Government College University (GCU), Lahore",
+    year: "2020 — 2022",
+  },
+  {
+    degree: "Matriculation (SSC)",
+    school: "Sanai School System, Sargodha",
+    year: "Completed 2020",
+  },
+];
 
-const PROJECT_ENTRIES = [
+/**
+ * Project cover images. Screenshots of the live deployments, GitHub OpenGraph cards for
+ * repo-only work. Vite resolves + fingerprints them; `image` on a project is the file stem.
+ */
+const COVERS = import.meta.glob("../assets/projects/*.jpg", {
+  eager: true,
+  query: "?url",
+  import: "default",
+});
+
+const cover = (stem) => COVERS[`../assets/projects/${stem}.jpg`];
+
+/**
+ * `featured` projects render as large cards; the rest fill the grid.
+ * `category` drives the filter chips in the Projects section.
+ */
+export const PROJECTS = [
   {
-    title: "hairstyle-ai",
+    title: "Traceo",
+    role: "Co-Founder & CTO",
+    category: "Product",
+    featured: true,
+    year: "2024 — Present",
+    image: cover("traceo"),
     description:
-      "AI-powered hairstyle visualization and experimentation (TypeScript, deployed on Vercel).",
-    technologies: ["TypeScript", "Vercel", "AI"],
+      "Chrome extension for one-click bug capture: developers and QA teams inspect CSS, capture visual bugs and record sessions, then share them as actionable reports. Owned end to end — product design, front-end engineering and go-to-market.",
+    technologies: ["Chrome Extension", "TypeScript", "React", "Product"],
+    live: "https://www.traceo.dev",
   },
   {
-    title: "AIJobScraper",
+    title: "University ERP System",
+    role: "Final Year Project · NUML",
+    category: "Full-stack",
+    featured: true,
+    year: "2025 — Present",
+    image: cover("university-erp-system"),
     description:
-      "Job discovery and scraping workflow with an AI-assisted interface.",
-    technologies: ["TypeScript", "Vercel", "Automation"],
+      "ERP system for university operations built with the official NUML team — student, academic and administrative modules. Contributing full-stack development, database schema design and module integration.",
+    technologies: ["Next.js", "TypeScript", "PostgreSQL", "REST APIs"],
   },
   {
-    title: "BinteShauq",
-    description: "Full-stack TypeScript application hosted on Vercel.",
-    technologies: ["TypeScript", "Vercel", "React"],
-  },
-  {
-    title: "BXAssist",
-    description: "Assistant and productivity tooling built with TypeScript.",
-    technologies: ["TypeScript", "Vercel", "Next.js"],
-  },
-  {
-    title: "n8nRender",
+    title: "AI Video Analyzer",
+    role: "AI Engineer",
+    category: "Computer Vision",
+    featured: true,
+    year: "2025",
+    image: cover("ai-video-analyzer"),
     description:
-      "Utilities and configuration for n8n workflow rendering or deployment.",
-    technologies: ["n8n", "Automation"],
+      "Warehouse safety inspection platform: uploads warehouse footage and runs AI detection for incorrect parking and waste obstructing emergency-vehicle and fire-brigade access. Two front-end iterations plus a Python inference backend — ingestion, model inference, API design and a results/playback UI.",
+    technologies: ["TypeScript", "Next.js", "Python", "Computer Vision"],
+    live: "https://ai-video-analyzer-v2.vercel.app",
+    code: repo("AIVideoAnalyzer-Backend"),
   },
   {
-    title: "ambial",
-    description: "TypeScript web application deployed on Vercel.",
-    technologies: ["TypeScript", "Vercel"],
-  },
-  {
-    title: "AI-Gen-Storybook",
+    title: "Maqsam Voice Agent",
+    role: "AI Engineer",
+    category: "AI & LLM",
+    year: "2025",
+    image: cover("maqsam-voice-agent"),
     description:
-      "AI-assisted Storybook generation and UI documentation workflows.",
-    technologies: ["TypeScript", "Storybook", "AI"],
-  },
-  {
-    title: "Core42Ops",
-    description: "Operations-oriented dashboard and internal tooling.",
-    technologies: ["TypeScript", "Vercel", "Dashboard"],
-  },
-  {
-    title: "MaqsamVoiceAgent",
-    description: "Voice agent interface with AI and telephony integrations.",
-    technologies: ["TypeScript", "Voice", "AI"],
-  },
-  {
-    title: "AIVideoAnalyzerV2",
-    description:
-      "Next-generation AI video analysis UI and processing pipeline (frontend).",
-    technologies: ["TypeScript", "Video", "AI"],
+      "Voice assistant integrating LLMs with telephony so callers interact through an AI-driven conversational flow. Built the TypeScript front end, live connection state and voice/event handling.",
+    technologies: ["TypeScript", "Voice AI", "LLMs", "Telephony"],
+    live: "https://maqsam-voice-agent.vercel.app",
+    code: repo("MaqsamVoiceAgent"),
   },
   {
     title: "FloorPlanSegmentor",
+    role: "AI Engineer",
+    category: "Computer Vision",
+    year: "2025",
+    image: cover("floorplansegmentor"),
     description:
-      "Floor plan segmentation and computer-vision style analysis tools.",
-    technologies: ["TypeScript", "CV", "AI"],
+      "Drag-and-drop tool that processes architectural floor plans and extracts structural regions with a segmentation pipeline. Owned the TypeScript UI and the pipeline integration.",
+    technologies: ["TypeScript", "SAM", "Roboflow", "Next.js"],
+    live: "https://floor-plan-segmentor.vercel.app",
+    code: repo("FloorPlanSegmentor"),
   },
   {
-    title: "Segmentor",
-    description: "Segmentation experiments and related tooling.",
-    technologies: ["GitHub", "AI"],
+    title: "Hairstyle-ai",
+    role: "Solo Developer",
+    category: "AI & LLM",
+    image: cover("hairstyle-ai"),
+    description:
+      "AI hairstyle changer offering 150+ virtual try-ons on a user's own photo, with before/after comparison and an AI nail-art mode. Full TypeScript stack — model prompting, image handling and a Next.js UI.",
+    technologies: ["TypeScript", "Next.js", "Generative AI", "Vercel"],
+    live: "https://hairstyle-ai-dun.vercel.app",
+    code: repo("hairstyle-ai"),
   },
   {
-    title: "AIVideoAnalyzer",
-    description: "AI-powered video analysis application (TypeScript).",
-    technologies: ["TypeScript", "Video", "AI"],
+    title: "Symptra Policy Assistant",
+    role: "AI Engineer",
+    category: "AI & LLM",
+    year: "2025",
+    image: cover("symptra"),
+    description:
+      "Retrieval-based assistant that answers employee questions about company policies and procedures — suggested prompts, chat UI and light/dark theming over a document-grounded backend.",
+    technologies: ["TypeScript", "Next.js", "RAG", "LLMs"],
+    live: "https://symptra.vercel.app",
+    code: repo("symptra"),
   },
   {
-    title: "AIVideoAnalyzer-Backend",
-    description: "Python backend services for AI video analysis workloads.",
-    technologies: ["Python", "API", "AI"],
+    title: "Core42Ops",
+    role: "Solo Developer",
+    category: "Full-stack",
+    year: "2025",
+    image: cover("core42ops"),
+    description:
+      "Voice Ops dashboard for monitoring and analysing AI call operations — total calls, completion rate and average duration tiles, recent-call tables, and agent/settings views.",
+    technologies: ["TypeScript", "Next.js", "Dashboard", "Voice AI"],
+    live: "https://core42-ops.vercel.app",
+    code: repo("Core42Ops"),
   },
   {
-    title: "pharmacy-mgmt",
-    description: "Pharmacy management product (Pharmafy) built with TypeScript.",
-    technologies: ["TypeScript", "Vercel", "Healthcare"],
-  },
-  {
-    title: "symptra",
-    description: "Healthcare-oriented TypeScript application on Vercel.",
-    technologies: ["TypeScript", "Vercel", "Healthcare"],
-  },
-  {
-    title: "cricket-predictor",
-    description: "Cricket analytics and prediction tooling (TypeScript).",
-    technologies: ["TypeScript", "Analytics", "AI"],
-  },
-  {
-    title: "brandbrain",
-    description: "Brand and marketing intelligence tooling.",
-    technologies: ["TypeScript", "Vercel", "Marketing"],
+    title: "AI Job Scraper",
+    role: "Solo Developer",
+    category: "Automation",
+    image: cover("ai-job-scraper"),
+    description:
+      "Authenticated job-discovery workflow that scrapes listings and uses an AI layer to summarise, filter and rank roles — scraper logic, data normalisation and a TypeScript UI.",
+    technologies: ["TypeScript", "Scraping", "LLMs", "Vercel"],
+    live: "https://ai-job-scraper-seven.vercel.app",
+    code: repo("AIJobScraper"),
   },
   {
     title: "VercelBot",
-    description: "Bot automation and integrations around Vercel workflows.",
-    technologies: ["TypeScript", "Vercel", "Automation"],
-  },
-  {
-    title: "TalkJunkie",
-    description: "Chat and communication-related project.",
-    technologies: ["GitHub", "Chat"],
-  },
-  {
-    title: "nextjs-ai-chatbot",
+    role: "Solo Developer",
+    category: "Automation",
+    image: cover("vercelbot"),
     description:
-      "Next.js AI chatbot patterns with LLM integrations (Vercel AI SDK–style).",
-    technologies: ["Next.js", "TypeScript", "AI"],
+      "AI-powered development assistant for building, deploying and managing web applications — Google/email auth, workflow automation around deployments, status and project actions.",
+    technologies: ["TypeScript", "Automation", "Vercel API", "Auth"],
+    live: "https://talkjunkie.vercel.app",
+    code: repo("VercelBot"),
   },
   {
-    title: "my-portfolio",
+    title: "Magic Storybook",
+    role: "Solo Developer",
+    category: "AI & LLM",
+    image: cover("ai-gen-storybook"),
     description:
-      "Personal portfolio site for Syed Fahad Abbas Kazmi (this project’s live deployment).",
-    technologies: ["JavaScript", "React", "Vite"],
+      "Generative storybook app: upload a child's photo and they become the hero of a customised illustrated adventure — jungle expeditions, superhero missions, princess tales.",
+    technologies: ["TypeScript", "Next.js", "Generative AI", "Vercel"],
+    live: "https://ai-gen-storybook.vercel.app",
+    code: repo("AI-Gen-Storybook"),
   },
   {
-    title: "BooksPortal",
-    description: "Simplest Laravel project CRUD.",
-    technologies: ["PHP", "Laravel", "MySQL"],
-  },
-  {
-    title: "LaravelProject",
-    description: "E-commerce project (Laravel).",
-    technologies: ["Blade", "Laravel", "PHP"],
-  },
-  {
-    title: "HospitalManagementSystem",
+    title: "BinteShauq",
+    role: "Solo Developer",
+    category: "Full-stack",
+    image: cover("binteshauq"),
     description:
-      "Fully functional hospital management system (Laravel). Add mail details in .env for email verification and password reset.",
-    technologies: ["Laravel", "CSS", "MySQL"],
+      "E-commerce storefront for premium women's wear — product catalogue, featured collections, cart and accounts. Full-stack TypeScript with server-side data flows; product, UI and deployment owned end to end.",
+    technologies: ["TypeScript", "Next.js", "E-commerce", "Vercel"],
+    live: "https://binte-shauq.vercel.app",
+    code: repo("BinteShauq"),
+  },
+  {
+    title: "Ambial",
+    role: "Solo Developer",
+    category: "Full-stack",
+    image: cover("ambial"),
+    description:
+      "Community content platform with authenticated sign-in that unlocks tailored content for members — clean, motion-aware Next.js UI.",
+    technologies: ["TypeScript", "Next.js", "Auth", "Vercel"],
+    live: "https://ambial.vercel.app",
+    code: repo("ambial"),
+  },
+  {
+    title: "Next.js AI Chatbot",
+    role: "Solo Developer",
+    category: "AI & LLM",
+    image: cover("nextjs-ai-chatbot"),
+    description:
+      "LLM chatbot reference architecture — streaming responses, prompt handling and chat persistence, reusable as a starter for domain-specific assistants.",
+    technologies: ["Next.js", "Vercel AI SDK", "TypeScript", "Streaming"],
+    code: repo("nextjs-ai-chatbot"),
+  },
+  {
+    title: "BXAssist",
+    role: "Solo Developer",
+    category: "AI & LLM",
+    image: cover("bxassist"),
+    description:
+      "Slack-integrated AI assistant with a policy-chat backend — prompt orchestration and API layer behind a Slack app.",
+    technologies: ["TypeScript", "Slack API", "LLMs", "Vercel"],
+    code: repo("BXAssist"),
+  },
+  {
+    title: "BrandBrain",
+    role: "Solo Developer",
+    category: "AI & LLM",
+    image: cover("brandbrain"),
+    description:
+      "Brand and marketing intelligence tool that organises insights and supports decision-making for marketers.",
+    technologies: ["TypeScript", "Next.js", "AI", "Vercel"],
+    code: repo("brandbrain"),
+  },
+  {
+    title: "Pharmafy",
+    role: "Web Developer",
+    category: "Full-stack",
+    year: "2025",
+    image: cover("pharmafy"),
+    description:
+      "Pharmacy management product covering inventory, records and order workflows, with a Postgres-style data model and modular UI.",
+    technologies: ["TypeScript", "Next.js", "PostgreSQL", "Vercel"],
+    code: repo("pharmacy-mgmt"),
+  },
+  {
+    title: "Cricket Predictor",
+    role: "Solo Developer",
+    category: "AI & LLM",
+    image: cover("cricket-predictor"),
+    description:
+      "Sports analytics tool exposing model-driven cricket predictions and insights — data flow, prediction layer and UI.",
+    technologies: ["TypeScript", "Analytics", "ML"],
+    code: repo("cricket-predictor"),
+  },
+  {
+    title: "n8n Render Deploy",
+    role: "Solo Developer",
+    category: "Automation",
+    image: cover("n8n-render-deploy"),
+    description:
+      "Deployment configuration and utilities for self-hosting n8n workflow automation.",
+    technologies: ["n8n", "Docker", "Automation"],
+    code: repo("n8nRender"),
+  },
+  {
+    title: "Hospital Management System",
+    role: "Solo Developer",
+    category: "Full-stack",
+    image: cover("hospital-management-system"),
+    description:
+      "Full-featured Laravel management application with user authentication, email verification and password-reset flows.",
+    technologies: ["Laravel", "PHP", "MySQL", "Blade"],
+    code: repo("HospitalManagementSystem"),
+  },
+  {
+    title: "E-Commerce Platform",
+    role: "Solo Developer",
+    category: "Full-stack",
+    image: cover("e-commerce-platform"),
+    description:
+      "Multi-page Laravel online store with product catalogue, cart and order management.",
+    technologies: ["Laravel", "PHP", "MySQL", "Bootstrap"],
+    code: repo("LaravelProject"),
+  },
+  {
+    title: "Single-Page CRUD App",
+    role: "Solo Developer",
+    category: "Full-stack",
+    image: cover("single-page-crud-app"),
+    description:
+      "SPA demonstrating a decoupled front end against a Laravel API back end.",
+    technologies: ["Vue.js", "Laravel", "REST APIs", "MySQL"],
+    code: repo("BooksPortal"),
   },
 ];
 
-function stockImageForIndex(index) {
-  const spread = (index * 17 + 13) % TECH_STOCK_IMAGES.length;
-  return TECH_STOCK_IMAGES[spread];
-}
-
-export const PROJECTS = PROJECT_ENTRIES.map((project, index) => ({
-  ...project,
-  link: `https://github.com/${GITHUB_USER}/${project.title}`,
-  image: stockImageForIndex(index),
-}));
+export const PROJECT_CATEGORIES = [
+  "All",
+  ...Array.from(new Set(PROJECTS.map((p) => p.category))),
+];
 
 export const CONTACT = {
-  address: "I-8/4 Islamabad ",
-  phoneNo: "+92 304 1646924 ",
+  address: "Islamabad, Pakistan",
+  phoneNo: "+92 304 1646924",
   email: "fahadkazmi.dev@gmail.com",
 };
 
@@ -264,3 +485,12 @@ export const SOCIAL_PROFILES = {
   twitter: "https://x.com/rollno125",
   instagram: "https://www.instagram.com/yrrrrfahad_/",
 };
+
+export const NAV_LINKS = [
+  { href: "#about", label: "About" },
+  { href: "#skills", label: "Skills" },
+  { href: "#experience", label: "Experience" },
+  { href: "#projects", label: "Projects" },
+  { href: "#education", label: "Education" },
+  { href: "#contact", label: "Contact" },
+];
