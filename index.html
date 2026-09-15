@@ -62,6 +62,7 @@
     <link rel="icon" type="image/png" href="/icon.png" />
     <link rel="apple-touch-icon" href="/icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
+    <link rel="preload" as="image" href="/lcp-profile.webp" fetchpriority="high" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -160,7 +161,25 @@
     </script>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <!-- Static LCP candidate: same URL as Hero photo so React remount keeps the cached image. -->
+      <img
+        src="/lcp-profile.webp"
+        width="448"
+        height="456"
+        fetchpriority="high"
+        decoding="async"
+        alt="Syed Fahad Abbas Kazmi, AI Engineer &amp; Full-Stack Software Developer"
+        style="
+          display: block;
+          max-width: 15rem;
+          width: 100%;
+          height: auto;
+          margin: 4rem auto 0;
+          border-radius: 1rem;
+        "
+      />
+    </div>
     <noscript>
       <h1>Syed Fahad Abbas Kazmi — AI Engineer &amp; Full-Stack Software Developer</h1>
       <p>

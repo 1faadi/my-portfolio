@@ -1,4 +1,4 @@
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 
@@ -10,7 +10,30 @@ const Education = lazy(() => import("./components/Education"));
 const Contact = lazy(() => import("./components/Contact"));
 const Footer = lazy(() => import("./components/Footer"));
 
+const BelowFold = () => (
+  <>
+    <About />
+    <Skills />
+    <Experience />
+    <Projects />
+    <Education />
+    <Contact />
+  </>
+);
+
 const App = () => {
+  const [loadRest, setLoadRest] = useState(false);
+
+  useEffect(() => {
+    const kick = () => setLoadRest(true);
+    if ("requestIdleCallback" in window) {
+      const id = window.requestIdleCallback(kick, { timeout: 1200 });
+      return () => window.cancelIdleCallback(id);
+    }
+    const t = window.setTimeout(kick, 1);
+    return () => window.clearTimeout(t);
+  }, []);
+
   return (
     // overflow-x-clip, not -hidden: `hidden` creates a scroll container and breaks the sticky navbar.
     <div className="overflow-x-clip text-neutral-300 antialiased selection:bg-cyan-300 selection:text-cyan-900">
@@ -34,18 +57,17 @@ const App = () => {
         </header>
         <main id="main-content" tabIndex={-1}>
           <Hero />
-          <Suspense fallback={null}>
-            <About />
-            <Skills />
-            <Experience />
-            <Projects />
-            <Education />
-            <Contact />
-          </Suspense>
+          {loadRest ? (
+            <Suspense fallback={null}>
+              <BelowFold />
+            </Suspense>
+          ) : null}
         </main>
-        <Suspense fallback={null}>
-          <Footer />
-        </Suspense>
+        {loadRest ? (
+          <Suspense fallback={null}>
+            <Footer />
+          </Suspense>
+        ) : null}
       </div>
     </div>
   );

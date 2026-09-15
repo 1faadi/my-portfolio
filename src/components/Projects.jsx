@@ -1,8 +1,8 @@
 import { useMemo, useState } from "react";
-import { motion } from "motion/react";
 import { FaGithub } from "react-icons/fa";
 import { HiArrowUpRight } from "react-icons/hi2";
 import { PROJECT_CATEGORIES, PROJECTS, SOCIAL_PROFILES } from "../constants";
+import Reveal from "./Reveal";
 import Tilt from "./Tilt";
 
 /** Deterministic hue per project so covers stay stable across renders. */
@@ -154,9 +154,9 @@ const Projects = () => {
       className="scroll-mt-24 border-b border-neutral-900 pb-20"
     >
       <h2 className="mb-4 mt-14 text-center text-3xl font-light tracking-tight sm:mt-20 sm:text-4xl">
-        Selected <span className="text-neutral-500">Projects</span>
+        Selected <span className="text-neutral-400">Projects</span>
       </h2>
-      <p className="mx-auto mb-10 max-w-2xl text-center text-sm text-neutral-500">
+      <p className="mx-auto mb-10 max-w-2xl text-center text-sm text-neutral-400">
         AI systems, computer-vision tooling and full-stack products — shipped and
         deployed.
       </p>
@@ -181,13 +181,9 @@ const Projects = () => {
 
       <div className="grid gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
         {visible.map((project, index) => (
-          <motion.div
+          <Reveal
             key={project.title}
-            layout
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: Math.min(index, 6) * 0.05 }}
-            viewport={{ once: true, amount: 0.1 }}
+            delayMs={Math.min(index, 6) * 50}
             className={
               project.featured && filter === "All"
                 ? "sm:col-span-2 lg:col-span-3"
@@ -198,17 +194,17 @@ const Projects = () => {
               project={project}
               featured={project.featured && filter === "All"}
             />
-          </motion.div>
+          </Reveal>
         ))}
       </div>
 
-      <p className="mt-12 text-center text-sm text-neutral-500">
+      <p className="mt-12 text-center text-sm text-neutral-400">
         More work and live demos on{" "}
         <a
           href={SOCIAL_PROFILES.github}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-purple-300 underline-offset-4 hover:underline"
+          className="text-purple-200 underline underline-offset-4"
         >
           github.com/1faadi
         </a>

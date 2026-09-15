@@ -1,5 +1,5 @@
-import { motion } from "motion/react";
 import { EXPERIENCES } from "../constants";
+import Reveal from "./Reveal";
 
 const Experience = () => {
   return (
@@ -8,17 +8,14 @@ const Experience = () => {
       className="scroll-mt-24 border-b border-neutral-900 pb-20"
     >
       <h2 className="my-14 text-center text-3xl font-light tracking-tight sm:my-20 sm:text-4xl">
-        Work <span className="text-neutral-500">Experience</span>
+        Work <span className="text-neutral-400">Experience</span>
       </h2>
 
       <ol className="relative ml-2 border-l border-white/10 pl-6 sm:ml-4 sm:pl-10 lg:ml-6 lg:pl-12">
         {EXPERIENCES.map((experience) => (
-          <motion.li
+          <Reveal
+            as="li"
             key={`${experience.company}-${experience.role}`}
-            whileInView={{ opacity: 1, y: 0 }}
-            initial={{ opacity: 0, y: 32 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true, amount: 0.15 }}
             className="relative mb-12 last:mb-0"
           >
             <span
@@ -56,7 +53,7 @@ const Experience = () => {
                 </li>
               ))}
             </ul>
-          </motion.li>
+          </Reveal>
         ))}
       </ol>
     </section>

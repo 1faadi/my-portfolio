@@ -1,7 +1,6 @@
 import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { HiOutlineDocumentArrowDown, HiBars3 } from "react-icons/hi2";
-import logo from "../assets/logo.webp";
 import { NAV_LINKS, PROFILE, SOCIAL_PROFILES } from "../constants";
 
 const SOCIALS = [
@@ -20,7 +19,7 @@ const Navbar = () => {
       <a href="#home" className="flex flex-shrink-0 items-center gap-2.5">
         <img
           className="w-8"
-          src={logo}
+          src="/logo.webp"
           width="32"
           height="32"
           alt={`${PROFILE.name} — logo`}
@@ -61,8 +60,8 @@ const Navbar = () => {
           download={PROFILE.resumeFileName}
           className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-2 text-sm font-semibold text-neutral-900 transition hover:bg-neutral-200 sm:px-4"
         >
-          <HiOutlineDocumentArrowDown className="text-base" />
-          <span className="hidden sm:inline">Résumé</span>
+          <HiOutlineDocumentArrowDown className="text-base" aria-hidden />
+          <span className="sr-only sm:not-sr-only">Résumé</span>
         </a>
 
         <details className="relative lg:hidden">

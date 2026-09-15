@@ -7,19 +7,12 @@ function preloadLcpImage() {
     name: "preload-lcp-image",
     transformIndexHtml: {
       order: "post",
-      handler(html, ctx) {
-        const bundle = ctx.bundle;
-        if (!bundle) return html;
-        const profile = Object.values(bundle).find(
-          (chunk) =>
-            chunk.type === "asset" &&
-            typeof chunk.fileName === "string" &&
-            /profile.*\.webp$/.test(chunk.fileName)
-        );
-        if (!profile) return html;
+      handler(html) {
+        // Prefer the stable public LCP asset so HTML can discover it before JS.
+        if (html.includes('href="/lcp-profile.webp"')) return html;
         return html.replace(
           "</head>",
-          `    <link rel="preload" as="image" href="/${profile.fileName}" fetchpriority="high" />\n  </head>`
+          `    <link rel="preload" as="image" href="/lcp-profile.webp" fetchpriority="high" />\n  </head>`
         );
       },
     },
@@ -30,10 +23,10 @@ function preloadLcpImage() {
 export default defineConfig({
   plugins: [react(), preloadLcpImage()],
   build: {
+    assetsInlineLimit: 0,
     rollupOptions: {
       output: {
         manualChunks(id) {
-          if (id.includes("node_modules/motion")) return "motion";
           if (id.includes("node_modules/react-dom")) return "react";
           if (id.includes("node_modules/react/")) return "react";
         },

@@ -1,4 +1,3 @@
-import { motion } from "motion/react";
 import {
   SiAnthropic,
   SiBootstrap,
@@ -25,6 +24,7 @@ import {
   SiVercel,
 } from "react-icons/si";
 import { SKILL_GROUPS } from "../constants";
+import Reveal from "./Reveal";
 import Tilt from "./Tilt";
 
 const TECH_ICONS = [
@@ -80,7 +80,7 @@ const Skills = () => {
       className="scroll-mt-24 border-b border-neutral-900 pb-20"
     >
       <h2 className="my-14 text-center text-3xl font-light tracking-tight sm:my-20 sm:text-4xl">
-        Skills & <span className="text-neutral-500">Technologies</span>
+        Skills & <span className="text-neutral-400">Technologies</span>
       </h2>
 
       <div className="group relative overflow-hidden">
@@ -100,13 +100,7 @@ const Skills = () => {
 
       <div className="mt-12 grid gap-4 sm:mt-16 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
         {SKILL_GROUPS.map((group, index) => (
-          <motion.div
-            key={group.title}
-            whileInView={{ opacity: 1, y: 0 }}
-            initial={{ opacity: 0, y: 28 }}
-            transition={{ duration: 0.45, delay: (index % 3) * 0.08 }}
-            viewport={{ once: true, amount: 0.2 }}
-          >
+          <Reveal key={group.title} delayMs={(index % 3) * 80} className="h-full">
             <Tilt max={6} scale={1.015} className="h-full">
               <div className="glass h-full rounded-2xl p-5 sm:p-6">
                 <h3 className="depth-1 mb-4 text-sm font-semibold uppercase tracking-wider text-purple-300">
@@ -124,7 +118,7 @@ const Skills = () => {
                 </ul>
               </div>
             </Tilt>
-          </motion.div>
+          </Reveal>
         ))}
       </div>
     </section>

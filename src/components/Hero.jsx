@@ -1,6 +1,5 @@
 import { FaGithub } from "react-icons/fa";
 import { HiArrowDownTray, HiArrowRight } from "react-icons/hi2";
-import profilePic from "../assets/profile.webp";
 import {
   CONTACT,
   HERO_CONTENT,
@@ -59,10 +58,10 @@ const Hero = () => {
             </a>
           </div>
 
-          <p className="hero-rise mt-6 text-sm text-neutral-500 [animation-delay:400ms]">
+          <p className="hero-rise mt-6 text-sm text-neutral-400 [animation-delay:400ms]">
             {PROFILE.location} ·{" "}
             <a
-              className="text-neutral-300 underline-offset-4 hover:underline"
+              className="text-neutral-200 underline underline-offset-4"
               href={`mailto:${CONTACT.email}`}
             >
               {CONTACT.email}
@@ -75,10 +74,10 @@ const Hero = () => {
             <Tilt max={12} scale={1.03} className="mx-auto max-w-[15rem] sm:max-w-xs lg:max-w-sm">
               <div className="glass overflow-hidden rounded-3xl p-2 shadow-2xl shadow-purple-950/40">
                 <img
-                  src={profilePic}
+                  src="/lcp-profile.webp"
                   alt={`${PROFILE.name}, ${PROFILE.title}`}
-                  width="540"
-                  height="549"
+                  width="448"
+                  height="456"
                   // React 18 renders the camelCase prop with a warning; lowercase is the real attribute.
                   {...{ fetchpriority: "high" }}
                   decoding="async"
@@ -101,7 +100,7 @@ const Hero = () => {
               <span className="block text-2xl font-semibold text-neutral-100 sm:text-3xl">
                 {stat.value}
               </span>
-              <span className="mt-1 block text-xs uppercase tracking-wider text-neutral-500">
+              <span className="mt-1 block text-xs uppercase tracking-wider text-neutral-400">
                 {stat.label}
               </span>
             </dd>

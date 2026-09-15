@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-import { motion } from "motion/react";
-import aboutImg from "../assets/about.webp";
+import aboutImg from "../assets/about-sm.webp";
 import { ABOUT_TEXT, PROFILE } from "../constants";
+import Reveal from "./Reveal";
 import Tilt from "./Tilt";
 
 const PARAGRAPHS = ABOUT_TEXT.trim()
@@ -46,39 +46,27 @@ const About = () => {
       className="scroll-mt-24 border-b border-neutral-900 pb-20"
     >
       <h2 className="my-14 text-center text-3xl font-light tracking-tight sm:my-20 sm:text-4xl">
-        About <span className="text-neutral-500">Me</span>
+        About <span className="text-neutral-400">Me</span>
       </h2>
 
       <div className="flex flex-wrap items-start gap-8 lg:gap-12">
-        <motion.div
-          whileInView={{ opacity: 1, x: 0 }}
-          initial={{ opacity: 0, x: -60 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="w-full lg:w-[42%]"
-        >
+        <Reveal x={-40} y={0} className="w-full lg:w-[42%]">
           <Tilt max={8} className="lg:sticky lg:top-28">
             <div className="glass overflow-hidden rounded-3xl p-2">
               <img
                 className="w-full rounded-2xl object-cover brightness-95"
                 src={aboutImg}
-                width="900"
-                height="780"
+                width="400"
+                height="347"
                 loading="lazy"
                 decoding="async"
                 alt={`${PROFILE.name} at work`}
               />
             </div>
           </Tilt>
-        </motion.div>
+        </Reveal>
 
-        <motion.div
-          whileInView={{ opacity: 1, x: 0 }}
-          initial={{ opacity: 0, x: 60 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="w-full min-w-0 flex-1 space-y-5"
-        >
+        <Reveal x={40} y={0} className="w-full min-w-0 flex-1 space-y-5">
           {PARAGRAPHS.map((text, pi) => (
             <p
               key={pi}
@@ -90,7 +78,7 @@ const About = () => {
               {text}
             </p>
           ))}
-        </motion.div>
+        </Reveal>
       </div>
     </section>
   );

@@ -1,4 +1,3 @@
-import { motion } from "motion/react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import {
   HiOutlineDocumentArrowDown,
@@ -7,27 +6,16 @@ import {
   HiOutlinePhone,
 } from "react-icons/hi2";
 import { CONTACT, PROFILE, SOCIAL_PROFILES } from "../constants";
+import Reveal from "./Reveal";
 
 const Contact = () => {
   return (
     <section id="contact" className="scroll-mt-24 pb-24">
-      <motion.h2
-        whileInView={{ opacity: 1, y: 0 }}
-        initial={{ opacity: 0, y: -24 }}
-        transition={{ duration: 0.5 }}
-        viewport={{ once: true }}
-        className="my-14 text-center text-3xl font-light tracking-tight sm:my-20 sm:text-4xl"
-      >
-        Get in <span className="text-neutral-500">Touch</span>
-      </motion.h2>
+      <Reveal as="h2" y={-16} className="my-14 text-center text-3xl font-light tracking-tight sm:my-20 sm:text-4xl">
+        Get in <span className="text-neutral-400">Touch</span>
+      </Reveal>
 
-      <motion.div
-        whileInView={{ opacity: 1, y: 0 }}
-        initial={{ opacity: 0, y: 32 }}
-        transition={{ duration: 0.5 }}
-        viewport={{ once: true, amount: 0.2 }}
-        className="glass mx-auto max-w-3xl rounded-3xl p-6 text-center sm:p-10 lg:p-12"
-      >
+      <Reveal className="glass mx-auto max-w-3xl rounded-3xl p-6 text-center sm:p-10 lg:p-12">
         <p className="mx-auto max-w-xl text-neutral-400">
           {PROFILE.availability}. If you are building with LLMs, agents or
           need a full-stack engineer who ships, I would like to hear about it.
@@ -82,7 +70,7 @@ const Contact = () => {
             <HiOutlineEnvelope className="text-purple-300" /> {CONTACT.email}
           </a>
         </address>
-      </motion.div>
+      </Reveal>
     </section>
   );
 };
