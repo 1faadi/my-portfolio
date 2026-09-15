@@ -1,7 +1,7 @@
 import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { HiOutlineDocumentArrowDown, HiBars3 } from "react-icons/hi2";
-import logo from "../assets/logo.png";
+import logo from "../assets/logo.webp";
 import { NAV_LINKS, PROFILE, SOCIAL_PROFILES } from "../constants";
 
 const SOCIALS = [

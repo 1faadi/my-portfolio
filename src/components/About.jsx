@@ -1,23 +1,20 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
-import aboutImg from "../assets/about.jpg";
+import aboutImg from "../assets/about.webp";
 import { ABOUT_TEXT, PROFILE } from "../constants";
 import Tilt from "./Tilt";
 
 const PARAGRAPHS = ABOUT_TEXT.trim()
   .split(/\n\n+/)
-  .map((p) => p.trim().split(/\s+/));
-
-const TOTAL_WORDS = PARAGRAPHS.reduce((n, p) => n + p.length, 0);
-const WORD_MS = 14;
+  .map((p) => p.trim());
 
 /**
- * Words stay in the DOM at all times (crawlable) and only fade in as the
- * section is read — the reveal is presentation, never content gating.
+ * Paragraphs stay in the DOM (crawlable). A single opacity toggle reveals them
+ * once the section is in view — no per-word spans.
  */
 const About = () => {
   const sectionRef = useRef(null);
-  const [revealed, setRevealed] = useState(0);
+  const [revealed, setRevealed] = useState(false);
 
   useEffect(() => {
     const root = sectionRef.current;
@@ -25,36 +22,22 @@ const About = () => {
 
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduce) {
-      setRevealed(TOTAL_WORDS);
+      setRevealed(true);
       return;
     }
 
-    let timer;
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (!entry.isIntersecting) return;
         observer.disconnect();
-        timer = window.setInterval(() => {
-          setRevealed((n) => {
-            if (n >= TOTAL_WORDS) {
-              window.clearInterval(timer);
-              return n;
-            }
-            return n + 1;
-          });
-        }, WORD_MS);
+        setRevealed(true);
       },
       { threshold: 0.12 }
     );
 
     observer.observe(root);
-    return () => {
-      observer.disconnect();
-      window.clearInterval(timer);
-    };
+    return () => observer.disconnect();
   }, []);
-
-  let cursor = 0;
 
   return (
     <section
@@ -79,8 +62,8 @@ const About = () => {
               <img
                 className="w-full rounded-2xl object-cover brightness-95"
                 src={aboutImg}
-                width="1400"
-                height="1212"
+                width="900"
+                height="780"
                 loading="lazy"
                 decoding="async"
                 alt={`${PROFILE.name} at work`}
@@ -96,23 +79,15 @@ const About = () => {
           viewport={{ once: true }}
           className="w-full min-w-0 flex-1 space-y-5"
         >
-          {PARAGRAPHS.map((words, pi) => (
+          {PARAGRAPHS.map((text, pi) => (
             <p
               key={pi}
-              className="text-sm leading-[1.8] tracking-tight text-neutral-400 sm:text-base md:text-[1.05rem]"
+              className={`text-sm leading-[1.8] tracking-tight text-neutral-400 transition-opacity duration-700 sm:text-base md:text-[1.05rem] ${
+                revealed ? "opacity-100" : "opacity-30"
+              }`}
+              style={{ transitionDelay: revealed ? `${pi * 120}ms` : "0ms" }}
             >
-              {words.map((word, wi) => {
-                const index = cursor++;
-                return (
-                  <span
-                    key={wi}
-                    className="transition-opacity duration-300"
-                    style={{ opacity: index < revealed ? 1 : 0.12 }}
-                  >
-                    {word}{" "}
-                  </span>
-                );
-              })}
+              {text}
             </p>
           ))}
         </motion.div>

@@ -211,13 +211,13 @@ export const EDUCATION = [
  * Project cover images. Screenshots of the live deployments, GitHub OpenGraph cards for
  * repo-only work. Vite resolves + fingerprints them; `image` on a project is the file stem.
  */
-const COVERS = import.meta.glob("../assets/projects/*.jpg", {
+const COVERS = import.meta.glob("../assets/projects/*.webp", {
   eager: true,
   query: "?url",
   import: "default",
 });
 
-const cover = (stem) => COVERS[`../assets/projects/${stem}.jpg`];
+const cover = (stem) => COVERS[`../assets/projects/${stem}.webp`];
 
 /**
  * `featured` projects render as large cards; the rest fill the grid.
@@ -229,7 +229,7 @@ export const PROJECTS = [
     role: "Co-Founder & CTO",
     category: "Product",
     featured: true,
-    year: "2024 — Present",
+    year: "Jan 2026 — Present",
     image: cover("traceo"),
     description:
       "Chrome extension for one-click bug capture: developers and QA teams inspect CSS, capture visual bugs and record sessions, then share them as actionable reports. Owned end to end — product design, front-end engineering and go-to-market.",

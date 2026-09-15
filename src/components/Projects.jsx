@@ -49,6 +49,8 @@ const ProjectCard = ({ project, featured }) => {
             <img
               src={project.image}
               alt={`${project.title} — ${project.role} screenshot`}
+              width="800"
+              height="500"
               loading="lazy"
               decoding="async"
               className="h-full w-full object-cover object-top"

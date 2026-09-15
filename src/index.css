@@ -97,6 +97,36 @@ body {
   animation: marquee 40s linear infinite;
 }
 
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-scale {
+  from {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.hero-rise {
+  animation: hero-rise 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.hero-scale {
+  animation: hero-scale 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) 0.3s both;
+}
+
 @keyframes float-slow {
   0%,
   100% {
@@ -122,7 +152,9 @@ body {
     scroll-behavior: auto;
   }
   .animate-marquee,
-  .animate-pulse {
+  .animate-pulse,
+  .hero-rise,
+  .hero-scale {
     animation: none !important;
   }
   .tilt-inner {
