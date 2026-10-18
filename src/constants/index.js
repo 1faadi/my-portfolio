@@ -237,7 +237,109 @@ export const PROJECTS = [
     live: "https://www.traceo.dev",
   },
   {
-    title: "University ERP System",
+    title: "Growth Office",
+    role: "Architect & Lead Engineer",
+    category: "AI Agents",
+    featured: true,
+    year: "Sep 2026 — Oct 2026",
+    image: cover("growth-office"),
+    description:
+      "Multi-agent growth team for Traceo rendered as a 3-pane pixel office: Pixi tiled floor, Command Center and agent strip. Seven agents run GA4/Search Console standups, Scrapling SEO audits, brand-kit planning and draft-only publishing behind human approval gates. Claude Agent SDK, Next.js, Python crawler, deployed on Oracle Cloud.",
+    technologies: ["Claude Agent SDK", "Next.js", "TypeScript", "PixiJS", "FastAPI"],
+  },
+  {
+    title: "AI Route Planning & VRP Optimizer",
+    role: "AI / Backend Engineer",
+    category: "Optimization",
+    featured: true,
+    year: "May 2026 — Sep 2026",
+    image: cover("ai-route-planning"),
+    description:
+      "Planning module for a field-service CRM that decides who does which visit, in what order, on which day. Drive-time matrix from self-hosted OSRM (Redis-cached), multi-depot VRP solved by a Python OR-Tools microservice with capacity, skills, locked visits and time windows, greedy heuristic fallback in the NestJS orchestrator, and an LLM that only explains the “why”.",
+    technologies: ["Google OR-Tools", "Python", "FastAPI", "NestJS", "OSRM", "PostgreSQL"],
+  },
+  {
+    title: "Pieces & Bricks Mosaic Studio",
+    role: "Solo Developer",
+    category: "Computer Vision",
+    year: "Oct 2026",
+    image: cover("pieces-and-bricks"),
+    description:
+      "Browser-only PoC turning a photo into a buildable brick mosaic on 24×24 baseplates with a 40-colour palette. In-browser face detection auto-frames the crop; a byte-identical TypeScript port of PIL’s Lanczos resampling plus quantization reproduces a commercial pipeline brick-for-brick. Live counts, editor, CSV/PNG export and printable assembly instructions.",
+    technologies: ["TypeScript", "React", "Vite", "MediaPipe", "Canvas"],
+  },
+  {
+    title: "Morgan — Growth Lead Agent",
+    role: "Growth Office",
+    category: "AI Agents",
+    year: "Sep 2026",
+    image: cover("go-morgan"),
+    description:
+      "Orchestrator of the Growth Office floor: classifies owner messages into work actions, dispatches the other agents as a streamed multi-step plan, compiles the daily digest and builds the growth plan from brand kit, GA4 and crawl data. Escalates to a human on gated steps.",
+    technologies: ["Claude Agent SDK", "TypeScript", "Zod", "Streaming"],
+  },
+  {
+    title: "Quinn — Analytics Agent",
+    role: "Growth Office",
+    category: "AI Agents",
+    year: "Sep 2026",
+    image: cover("go-quinn"),
+    description:
+      "Runs the daily standup numbers: GA4 1d/7d/30d plus realtime and Search Console stats, period-over-period deltas, wins and losses for the digest. Falls back to a template narrative when no LLM is configured.",
+    technologies: ["GA4 Data API", "Search Console API", "TypeScript"],
+  },
+  {
+    title: "Riley — SEO Agent",
+    role: "Growth Office",
+    category: "AI Agents",
+    year: "Sep 2026",
+    image: cover("go-riley"),
+    description:
+      "Technical SEO agent: Scrapling crawls through a Python/FastAPI service, crawl digests, week-over-week issue diffs and live discoverability checks (sitemap, robots, llms.txt, JSON-LD). Same-host HTML audit fallback when the crawler is down.",
+    technologies: ["Scrapling", "FastAPI", "Docker", "TypeScript"],
+  },
+  {
+    title: "Casey — Writer Agent",
+    role: "Growth Office",
+    category: "AI Agents",
+    year: "Sep 2026",
+    image: cover("go-casey"),
+    description:
+      "Turns standup goals and brand-kit context into blog outlines and full drafts in product voice, grounded in GA4 evidence. Draft-quality self-check before storage; never publishes.",
+    technologies: ["LLM prompting", "Zod", "Markdown", "Next.js"],
+  },
+  {
+    title: "Parker — Publish Agent",
+    role: "Growth Office",
+    category: "AI Agents",
+    year: "Sep 2026",
+    image: cover("go-parker"),
+    description:
+      "Human-gated publishing: formats approved drafts and pushes to the blog only after an explicit approve flag passes the gate. Publish mode resolved from config so production is never hit by accident.",
+    technologies: ["Next.js API routes", "Zod", "Approval gates"],
+  },
+  {
+    title: "Alex — Jobs Agent",
+    role: "Growth Office",
+    category: "AI Agents",
+    year: "Sep 2026",
+    image: cover("go-alex"),
+    description:
+      "Password-gated jobs agent: live freelance-job feed from the UpHunt API, LLM job analysis and fit scoring, full-screen dashboard and proposal drafts for the best-fit roles.",
+    technologies: ["UpHunt API", "LLM scoring", "Next.js", "TypeScript"],
+  },
+  {
+    title: "U-Radar — Upwork Signal Agent",
+    role: "Growth Office",
+    category: "AI Agents",
+    year: "Sep 2026",
+    image: cover("go-uradar"),
+    description:
+      "Independent Upwork pipeline: cron scheduler → Claude Agent SDK with the official Upwork MCP server → normalize → dedup store → broadcast to its own desk on the office floor. Fit rules score each job; runs headless as a separate Node service.",
+    technologies: ["Claude Agent SDK", "MCP", "Node.js", "SQL"],
+  },
+  {
+    title: "NUML ERP System",
     role: "Final Year Project · NUML",
     category: "Full-stack",
     featured: true,
