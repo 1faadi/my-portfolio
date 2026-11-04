@@ -3,6 +3,7 @@ import { HiArrowDownTray, HiArrowRight } from "react-icons/hi2";
 import {
   CONTACT,
   HERO_CONTENT,
+  HERO_HEADLINE,
   HERO_STATS,
   PROFILE,
   SOCIAL_PROFILES,
@@ -22,8 +23,12 @@ const Hero = () => {
             {PROFILE.availability}
           </div>
 
-          <h1 className="hero-rise max-w-[16ch] text-4xl font-light tracking-tight text-neutral-100 [animation-delay:80ms] sm:text-5xl md:text-6xl lg:text-7xl">
+          <p className="hero-rise text-base font-medium text-neutral-200 [animation-delay:40ms] sm:text-lg">
             {PROFILE.name}
+          </p>
+
+          <h1 className="hero-rise mt-3 max-w-[18ch] text-4xl font-light tracking-tight text-neutral-100 [animation-delay:80ms] sm:text-5xl md:text-6xl">
+            {HERO_HEADLINE}
           </h1>
 
           <p className="hero-rise text-gradient mt-4 text-lg font-medium tracking-tight [animation-delay:160ms] sm:mt-5 sm:text-2xl">
@@ -70,7 +75,7 @@ const Hero = () => {
         </div>
 
         <div className="order-first w-full lg:order-none lg:w-2/5 lg:pl-10">
-          <div className="hero-scale">
+          <div>
             <Tilt max={12} scale={1.03} className="mx-auto max-w-[15rem] sm:max-w-xs lg:max-w-sm">
               <div className="glass overflow-hidden rounded-3xl p-2 shadow-2xl shadow-purple-950/40">
                 <img
@@ -90,7 +95,7 @@ const Hero = () => {
       </div>
 
       <dl className="hero-rise mt-12 grid grid-cols-2 gap-3 [animation-delay:500ms] sm:mt-16 sm:gap-4 lg:grid-cols-4">
-        {HERO_STATS.map((stat) => (
+        {HERO_STATS().map((stat) => (
           <div
             key={stat.label}
             className="glass rounded-2xl px-3 py-4 text-center sm:px-5"

@@ -1,9 +1,21 @@
 import { useMemo, useState } from "react";
 import { FaGithub } from "react-icons/fa";
-import { HiArrowUpRight } from "react-icons/hi2";
-import { PROJECT_CATEGORIES, PROJECTS, SOCIAL_PROFILES } from "../constants";
+import { HiArrowRight, HiArrowUpRight } from "react-icons/hi2";
+import {
+  PROJECT_CATEGORIES,
+  PROJECTS,
+  SOCIAL_PROFILES,
+  TOP_PROJECTS,
+} from "../constants";
 import Reveal from "./Reveal";
 import Tilt from "./Tilt";
+
+const rank = (project) => {
+  const i = TOP_PROJECTS.indexOf(project.title);
+  return i === -1 ? TOP_PROJECTS.length : i;
+};
+// Stable sort: top picks first in their listed order, everything else keeps its place.
+const ORDERED = [...PROJECTS].sort((a, b) => rank(a) - rank(b));
 
 /** Deterministic hue per project so covers stay stable across renders. */
 const hueOf = (title) =>
@@ -109,6 +121,14 @@ const ProjectCard = ({ project, featured }) => {
             </ul>
 
             <div className="mt-auto flex flex-wrap gap-3">
+              {project.caseStudy ? (
+                <a
+                  href={project.caseStudy}
+                  className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-purple-500 to-cyan-500 px-4 py-2 text-xs font-semibold text-neutral-950 transition hover:brightness-110"
+                >
+                  Read case study <HiArrowRight />
+                </a>
+              ) : null}
               {project.live ? (
                 <a
                   href={project.live}
@@ -139,14 +159,18 @@ const ProjectCard = ({ project, featured }) => {
 
 const Projects = () => {
   const [filter, setFilter] = useState("All");
+  const [showAll, setShowAll] = useState(false);
 
-  const visible = useMemo(
+  const matching = useMemo(
     () =>
       filter === "All"
-        ? PROJECTS
-        : PROJECTS.filter((project) => project.category === filter),
+        ? ORDERED
+        : ORDERED.filter((project) => project.category === filter),
     [filter]
   );
+  // A category filter is already a short list; only "All" is trimmed.
+  const trimmed = filter === "All" && !showAll;
+  const visible = trimmed ? matching.slice(0, TOP_PROJECTS.length) : matching;
 
   return (
     <section
@@ -197,6 +221,18 @@ const Projects = () => {
           </Reveal>
         ))}
       </div>
+
+      {trimmed ? (
+        <div className="mt-10 text-center">
+          <button
+            type="button"
+            onClick={() => setShowAll(true)}
+            className="inline-flex items-center gap-2 rounded-full border border-white/15 px-6 py-3 text-sm font-medium text-neutral-200 transition hover:border-white/35 hover:bg-white/5"
+          >
+            Show all {PROJECTS.length} projects
+          </button>
+        </div>
+      ) : null}
 
       <p className="mt-12 text-center text-sm text-neutral-400">
         More work and live demos on{" "}

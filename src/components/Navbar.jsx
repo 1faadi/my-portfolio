@@ -16,7 +16,7 @@ const Navbar = () => {
       className="sticky top-3 z-40 mx-auto mb-14 flex max-w-5xl items-center justify-between gap-3 rounded-full border border-white/10 bg-neutral-950/70 py-2 pl-3 pr-2 shadow-lg shadow-black/40 backdrop-blur-xl sm:top-5 sm:mb-20 sm:gap-6 sm:py-2.5 sm:pl-5 sm:pr-3"
       aria-label="Primary"
     >
-      <a href="#home" className="flex flex-shrink-0 items-center gap-2.5">
+      <a href="/" className="flex flex-shrink-0 items-center gap-2.5">
         <img
           className="w-8"
           src="/logo.webp"

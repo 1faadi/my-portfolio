@@ -13,13 +13,17 @@ export const PROFILE = {
   resumeFileName: "Syed Fahad Abbas Resume.pdf",
 };
 
+/** Hero H1: the outcome first, the name sits above it. */
+export const HERO_HEADLINE = "I ship AI agents and LLM systems to production.";
+
 export const HERO_CONTENT = `I build AI-powered products end to end — RAG pipelines, agentic workflows, and computer-vision systems wrapped in fast, production-grade Next.js and Nest.js applications. Currently AI Engineer at BXTrack Solutions and Co-Founder & CTO of Traceo.`;
 
-export const HERO_STATS = [
+// Values are derived where possible so they stay true as projects are added.
+export const HERO_STATS = () => [
   { value: "3+", label: "Years shipping software" },
-  { value: "20+", label: "Products & tools built" },
-  { value: "2", label: "Companies delivered for" },
-  { value: "1", label: "Product co-founded" },
+  { value: `${PROJECTS.length}`, label: "Projects shipped" },
+  { value: "7", label: "Agents in production" },
+  { value: "CTO", label: "Co-founder of Traceo" },
 ];
 
 export const ABOUT_TEXT = `I am Syed Fahad Abbas Kazmi, a full-stack software engineer specialising in AI-powered applications and production LLM systems. I work across the whole delivery lifecycle: architecting scalable back ends, building interactive front ends, and integrating Retrieval-Augmented Generation, vector databases, and intelligent automation into real products people use.
@@ -221,6 +225,7 @@ const cover = (stem) => COVERS[`../assets/projects/${stem}.webp`];
 
 /**
  * `featured` projects render as large cards; the rest fill the grid.
+ * `caseStudy` links a card to its long-form write-up.
  * `category` drives the filter chips in the Projects section.
  */
 export const PROJECTS = [
@@ -243,6 +248,7 @@ export const PROJECTS = [
     featured: true,
     year: "Sep 2026 — Oct 2026",
     image: cover("growth-office"),
+    caseStudy: "/case-studies/growth-office/",
     description:
       "Multi-agent growth team for Traceo rendered as a 3-pane pixel office: Pixi tiled floor, Command Center and agent strip. Seven agents run GA4/Search Console standups, Scrapling SEO audits, brand-kit planning and draft-only publishing behind human approval gates. Claude Agent SDK, Next.js, Python crawler, deployed on Oracle Cloud.",
     technologies: ["Claude Agent SDK", "Next.js", "TypeScript", "PixiJS", "FastAPI"],
@@ -254,6 +260,7 @@ export const PROJECTS = [
     featured: true,
     year: "May 2026 — Sep 2026",
     image: cover("ai-route-planning"),
+    caseStudy: "/case-studies/ai-route-planning/",
     description:
       "Planning module for a field-service CRM that decides who does which visit, in what order, on which day. Drive-time matrix from self-hosted OSRM (Redis-cached), multi-depot VRP solved by a Python OR-Tools microservice with capacity, skills, locked visits and time windows, greedy heuristic fallback in the NestJS orchestrator, and an LLM that only explains the “why”.",
     technologies: ["Google OR-Tools", "Python", "FastAPI", "NestJS", "OSRM", "PostgreSQL"],
@@ -342,7 +349,6 @@ export const PROJECTS = [
     title: "NUML ERP System",
     role: "Final Year Project · NUML",
     category: "Full-stack",
-    featured: true,
     year: "2025 — Present",
     image: cover("university-erp-system"),
     description:
@@ -353,7 +359,6 @@ export const PROJECTS = [
     title: "AI Video Analyzer",
     role: "AI Engineer",
     category: "Computer Vision",
-    featured: true,
     year: "2025",
     image: cover("ai-video-analyzer"),
     description:
@@ -588,11 +593,22 @@ export const SOCIAL_PROFILES = {
   instagram: "https://www.instagram.com/yrrrrfahad_/",
 };
 
+// Root-relative so the same nav works on /insights/ and the case-study pages.
 export const NAV_LINKS = [
-  { href: "#about", label: "About" },
-  { href: "#skills", label: "Skills" },
-  { href: "#experience", label: "Experience" },
-  { href: "#projects", label: "Projects" },
-  { href: "#education", label: "Education" },
-  { href: "#contact", label: "Contact" },
+  { href: "/#about", label: "About" },
+  { href: "/#experience", label: "Experience" },
+  { href: "/#projects", label: "Projects" },
+  { href: "/case-studies/growth-office/", label: "Case studies" },
+  { href: "/insights/", label: "Insights" },
+  { href: "/#contact", label: "Contact" },
+];
+
+/** Shown first, in this order, before "Show all". Featured ones render large. */
+export const TOP_PROJECTS = [
+  "Traceo",
+  "Growth Office",
+  "AI Route Planning & VRP Optimizer",
+  "AI Video Analyzer",
+  "Pieces & Bricks Mosaic Studio",
+  "NUML ERP System",
 ];
