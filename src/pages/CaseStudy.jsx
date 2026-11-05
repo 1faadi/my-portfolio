@@ -34,6 +34,17 @@ const CaseStudy = ({ slug }) => {
         <p className="mt-5 text-lg leading-relaxed text-neutral-300">
           {study.summary}
         </p>
+        {study.facts ? (
+          <dl className="mt-8 grid gap-3 sm:grid-cols-3">
+            {study.facts.map(([value, label]) => (
+              // dt must come first in the DOM; flex-col-reverse puts the value on top visually.
+              <div key={label} className="glass flex flex-col-reverse rounded-xl p-4">
+                <dt className="mt-1 text-xs text-neutral-400">{label}</dt>
+                <dd className="text-2xl font-light text-neutral-100">{value}</dd>
+              </div>
+            ))}
+          </dl>
+        ) : null}
         <dl className="mt-8 grid gap-4 text-sm sm:grid-cols-2">
           <div>
             <dt className="text-neutral-500">Role</dt>
@@ -45,6 +56,19 @@ const CaseStudy = ({ slug }) => {
           </div>
         </dl>
       </header>
+
+      {study.article ? (
+        <a
+          href={study.article.href}
+          className="glass mt-8 flex items-center justify-between gap-4 rounded-2xl p-5 transition hover:border-white/20"
+        >
+          <span>
+            <span className="block text-xs text-neutral-500">Read the full story</span>
+            <span className="mt-1 block text-neutral-100">{study.article.title}</span>
+          </span>
+          <HiArrowRight className="shrink-0 text-lg text-neutral-400" aria-hidden />
+        </a>
+      ) : null}
 
       {project?.image ? (
         <img

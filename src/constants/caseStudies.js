@@ -9,6 +9,15 @@ export const CASE_STUDIES = {
       "A seven-agent growth team for a developer tool, built so every number comes from a real data source, every AI step has a fallback that works without AI, and nothing publishes on its own.",
     role: "Architect & Lead Engineer",
     timeline: "Sep 2026 to Oct 2026",
+    facts: [
+      ["About 29,000", "lines of TypeScript, TSX and Python"],
+      ["7", "agents with a desk on the floor"],
+      ["24/7", "on a free Oracle Cloud ARM server"],
+    ],
+    article: {
+      href: "/insights/eleven-ai-agents/",
+      title: "I run eleven AI agents on one small server. Here is what they taught me.",
+    },
     stack: [
       "Claude Agent SDK",
       "Next.js",
@@ -55,6 +64,7 @@ export const CASE_STUDIES = {
       ["Publishing stays locked until approval exists", "Publishing only works when config is switched to live, and it is set to draft everywhere. Nothing has been published automatically. A proper approval screen comes before that switch is flipped."],
       ["Checks are live, not decorative", "Discoverability checks hit the real sitemap, robots.txt, llms.txt and JSON-LD every time. A green tick means the file was actually fetched and parsed."],
       ["Auth that degrades cleanly", "The model client tries a subscription token first, then an API key, then a router, then nothing. Each step down keeps the app working with less."],
+      ["Isolate the model from the machine", "Model calls run as a subprocess with no user settings and an empty MCP configuration, and any API key is removed so the subscription is always what gets billed. This came after a personal MCP server, loaded by accident, took the whole web app down."],
       ["Simple storage first", "The office keeps digests, crawls, drafts and the brand kit as Zod-validated JSON on disk. U-Radar, which needs history and dedupe, uses Postgres."],
     ],
     next: [
@@ -62,6 +72,7 @@ export const CASE_STUDIES = {
       "A job queue, so long crawls stop running inside a web request.",
       "Move the rest of the storage to Postgres.",
       "Scheduled standups and CI for the check scripts.",
+      "Backups for the server state and drafts.",
     ],
     related: "ai-route-planning",
   },
