@@ -262,8 +262,8 @@ export const PROJECTS = [
     image: cover("ai-route-planning"),
     caseStudy: "/case-studies/ai-route-planning/",
     description:
-      "Planning module for a field-service CRM that decides who does which visit, in what order, on which day. Drive-time matrix from self-hosted OSRM (Redis-cached), multi-depot VRP solved by a Python OR-Tools microservice with capacity, skills, locked visits and time windows, greedy heuristic fallback in the NestJS orchestrator, and an LLM that only explains the “why”.",
-    technologies: ["Google OR-Tools", "Python", "FastAPI", "NestJS", "OSRM", "PostgreSQL"],
+      "Planning module for a field-service CRM that decides who does which visit, in what order, on which day. Drive times from self-hosted OSRM cached per road leg, a Python route solver that respects skills, capacity, shifts, time windows and locked visits, a BullMQ job queue with a circuit breaker, and an LLM that only explains the “why”. Started on Google OR-Tools, then moved to a predictable nearest-feasible solver planners could reason about.",
+    technologies: ["Python", "FastAPI", "NestJS", "OSRM", "Redis", "BullMQ", "PostgreSQL"],
   },
   {
     title: "Pieces & Bricks Mosaic Studio",
