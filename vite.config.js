@@ -34,6 +34,7 @@ export default defineConfig({
       input: {
         main: page("index.html"),
         insights: page("insights/index.html"),
+        elevenAgents: page("insights/eleven-ai-agents/index.html"),
         growthOffice: page("case-studies/growth-office/index.html"),
         routePlanning: page("case-studies/ai-route-planning/index.html"),
       },

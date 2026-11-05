@@ -1,8 +1,9 @@
 import { FaLinkedin } from "react-icons/fa";
 import { SOCIAL_PROFILES } from "../constants";
+import { ARTICLES } from "../constants/articles";
 import { INSIGHTS } from "../constants/insights";
 
-const formatDate = (iso) =>
+export const formatDate = (iso) =>
   new Date(`${iso}T00:00:00Z`).toLocaleDateString("en-GB", {
     day: "numeric",
     month: "short",
@@ -37,6 +38,24 @@ const Insights = () => (
         <FaLinkedin aria-hidden /> Follow on LinkedIn
       </a>
     </header>
+
+    <section aria-label="Articles" className="mt-12 border-t border-white/5 pt-8">
+      <h2 className="mb-4 text-sm font-medium text-neutral-400">Articles</h2>
+      {ARTICLES.map((a) => (
+        <a
+          key={a.slug}
+          href={`/insights/${a.slug}/`}
+          className="glass group block overflow-hidden rounded-2xl transition hover:border-white/20"
+        >
+          <img src={a.image} alt="" width="1600" height="900" loading="lazy" className="w-full" />
+          <div className="p-5">
+            <time dateTime={a.date} className="text-xs text-neutral-500">{formatDate(a.date)}</time>
+            <h3 className="mt-2 text-xl font-light text-neutral-100 group-hover:text-white">{a.title}</h3>
+            <p className="mt-2 text-sm leading-relaxed text-neutral-400">{a.summary}</p>
+          </div>
+        </a>
+      ))}
+    </section>
 
     <nav aria-label="All posts" className="mt-12 border-t border-white/5 pt-8">
       <h2 className="mb-4 text-sm font-medium text-neutral-400">

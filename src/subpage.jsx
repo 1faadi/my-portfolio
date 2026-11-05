@@ -5,13 +5,17 @@ import Shell from "./components/Shell";
 
 const CaseStudy = lazy(() => import("./pages/CaseStudy"));
 const Insights = lazy(() => import("./pages/Insights"));
+const Article = lazy(() => import("./pages/Article"));
 
-/** Entry for every page except home. The HTML sets data-page="insights" or "case:<slug>". */
+/** Entry for every page except home. The HTML sets data-page="insights", "case:<slug>" or "article:<slug>". */
 const root = document.getElementById("root");
 const page = root.dataset.page;
 
-const Page = () =>
-  page === "insights" ? <Insights /> : <CaseStudy slug={page.slice("case:".length)} />;
+const Page = () => {
+  if (page === "insights") return <Insights />;
+  if (page.startsWith("article:")) return <Article slug={page.slice("article:".length)} />;
+  return <CaseStudy slug={page.slice("case:".length)} />;
+};
 
 createRoot(root).render(
   <StrictMode>
