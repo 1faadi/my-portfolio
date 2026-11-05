@@ -250,7 +250,7 @@ export const PROJECTS = [
     image: cover("growth-office"),
     caseStudy: "/case-studies/growth-office/",
     description:
-      "Multi-agent growth team for Traceo rendered as a 3-pane pixel office: Pixi tiled floor, Command Center and agent strip. Seven agents run GA4/Search Console standups, Scrapling SEO audits, brand-kit planning and draft-only publishing behind human approval gates. Claude Agent SDK, Next.js, Python crawler, deployed on Oracle Cloud.",
+      "Multi-agent growth team for Traceo rendered as a pixel-art office: Pixi tiled floor, Command Center and agent strip. Seven agents run GA4/Search Console standups, Scrapling SEO audits, brand-kit planning, blog drafts and Upwork job scoring. Numbers come only from real APIs, every LLM step has a no-LLM fallback, and publishing is locked to draft mode. Claude Agent SDK, Next.js, Python crawler, Postgres, deployed on Oracle Cloud.",
     technologies: ["Claude Agent SDK", "Next.js", "TypeScript", "PixiJS", "FastAPI"],
   },
   {
@@ -282,7 +282,7 @@ export const PROJECTS = [
     year: "Sep 2026",
     image: cover("go-morgan"),
     description:
-      "Orchestrator of the Growth Office floor: classifies owner messages into work actions, dispatches the other agents as a streamed multi-step plan, compiles the daily digest and builds the growth plan from brand kit, GA4 and crawl data. Escalates to a human on gated steps.",
+      "Lead of the Growth Office floor: routes each owner message with fast pattern matching and calls an LLM classifier only when the patterns miss, runs the other agents as a streamed plan in a fixed order, then writes the reply and builds the growth plan from brand kit, GA4 and crawl data.",
     technologies: ["Claude Agent SDK", "TypeScript", "Zod", "Streaming"],
   },
   {
@@ -292,7 +292,7 @@ export const PROJECTS = [
     year: "Sep 2026",
     image: cover("go-quinn"),
     description:
-      "Runs the daily standup numbers: GA4 1d/7d/30d plus realtime and Search Console stats, period-over-period deltas, wins and losses for the digest. Falls back to a template narrative when no LLM is configured.",
+      "Runs the daily standup numbers: GA4 1d/7d/30d plus realtime and Search Console stats, period-over-period deltas, and wins and losses decided by plain rules. The LLM only writes the summary, and a template takes over when no LLM is configured.",
     technologies: ["GA4 Data API", "Search Console API", "TypeScript"],
   },
   {
@@ -312,7 +312,7 @@ export const PROJECTS = [
     year: "Sep 2026",
     image: cover("go-casey"),
     description:
-      "Turns standup goals and brand-kit context into blog outlines and full drafts in product voice, grounded in GA4 evidence. Draft-quality self-check before storage; never publishes.",
+      "Drafts blog posts in product voice: topic must match the brand kit or a real Search Console query, then web research, an LLM SEO writer and an internal-link check. Saves drafts only; never publishes.",
     technologies: ["LLM prompting", "Zod", "Markdown", "Next.js"],
   },
   {
@@ -322,8 +322,8 @@ export const PROJECTS = [
     year: "Sep 2026",
     image: cover("go-parker"),
     description:
-      "Human-gated publishing: formats approved drafts and pushes to the blog only after an explicit approve flag passes the gate. Publish mode resolved from config so production is never hit by accident.",
-    technologies: ["Next.js API routes", "Zod", "Approval gates"],
+      "Publishing agent: formats drafts and pushes them to the Traceo blog only when publish mode is switched to live in config. It is locked to draft mode today, and nothing has been published automatically; an approval screen comes before going live.",
+    technologies: ["Next.js API routes", "Zod", "Config-gated publishing"],
   },
   {
     title: "Alex — Jobs Agent",
@@ -332,8 +332,8 @@ export const PROJECTS = [
     year: "Sep 2026",
     image: cover("go-alex"),
     description:
-      "Password-gated jobs agent: live freelance-job feed from the UpHunt API, LLM job analysis and fit scoring, full-screen dashboard and proposal drafts for the best-fit roles.",
-    technologies: ["UpHunt API", "LLM scoring", "Next.js", "TypeScript"],
+      "Password-gated jobs agent: reads U-Radar's Upwork job feed from Postgres, scores fit with plain rules, uses an LLM for job analysis, and drafts 120 to 190 word proposals with a banned-phrase check for the best-fit roles.",
+    technologies: ["PostgreSQL", "Rule-based scoring", "Claude", "Next.js", "TypeScript"],
   },
   {
     title: "U-Radar — Upwork Signal Agent",
@@ -342,8 +342,8 @@ export const PROJECTS = [
     year: "Sep 2026",
     image: cover("go-uradar"),
     description:
-      "Independent Upwork pipeline: cron scheduler → Claude Agent SDK with the official Upwork MCP server → normalize → dedup store → broadcast to its own desk on the office floor. Fit rules score each job; runs headless as a separate Node service.",
-    technologies: ["Claude Agent SDK", "MCP", "Node.js", "SQL"],
+      "Independent Upwork pipeline: a scheduler runs the Claude Agent SDK with the official Upwork MCP server, then normalizes, dedupes and stores jobs in Postgres. Plain fit rules score each job out of 100, and the best fits go to Slack and to its desk on the office floor. Runs headless as a separate Node service.",
+    technologies: ["Claude Agent SDK", "MCP", "Node.js", "PostgreSQL", "Slack"],
   },
   {
     title: "NUML ERP System",

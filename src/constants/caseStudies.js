@@ -1,12 +1,12 @@
 /**
- * Long-form case studies. Facts come from each project's own design docs;
+ * Long-form case studies. Facts come from each project's code and design docs;
  * client names, hosts and unmeasured performance claims are left out on purpose.
  */
 export const CASE_STUDIES = {
   "growth-office": {
     title: "Growth Office",
     summary:
-      "A seven-agent growth team for a developer tool, built so every number comes from a real data source and nothing goes public without a human saying yes.",
+      "A seven-agent growth team for a developer tool, built so every number comes from a real data source, every AI step has a fallback that works without AI, and nothing publishes on its own.",
     role: "Architect & Lead Engineer",
     timeline: "Sep 2026 to Oct 2026",
     stack: [
@@ -19,8 +19,10 @@ export const CASE_STUDIES = {
       "Scrapling",
       "GA4 Data API",
       "Search Console API",
+      "PostgreSQL",
       "Zod",
       "Docker",
+      "PM2",
       "Oracle Cloud",
     ],
     problem: [
@@ -28,36 +30,38 @@ export const CASE_STUDIES = {
       "A general chatbot is the wrong tool for this. It will happily invent traffic numbers, and letting an agent post to a live blog on its own is a risk no product should take on day one.",
     ],
     built:
-      "An always-on growth floor. You talk to one lead agent, it plans the work, and six specialists carry it out with real tools. The whole team is visible as a pixel-art office: a tiled floor where each agent has a desk, a command center for the work queue and logs, and an agent strip showing who is thinking, working or waiting on a person.",
+      "An always-on growth floor. You talk to one lead agent, it routes the work, and six specialists carry it out with real tools. The whole team is visible as a pixel-art office: a tiled floor where each agent has a desk, a command center with the terminal log, digest, tasks, brand kit and memory, and an agent strip showing who is working, done or blocked. The same floor also gives read-only desks to other bots running on the server, such as a PR reviewer and a sales agent.",
     agents: [
-      ["Morgan", "Growth lead. Turns a plain message into a plan, dispatches the other agents step by step, compiles the daily digest and builds the growth plan."],
-      ["Quinn", "Analytics. Pulls GA4 and Search Console numbers for 1, 7 and 30 days plus realtime, and reports period-over-period wins and losses."],
+      ["Morgan", "Growth lead. Reads each message with fast pattern matching and asks a model only when the patterns miss. Runs the right agents in a fixed order, writes the reply and builds the growth plan."],
+      ["Quinn", "Analytics. Pulls GA4 and Search Console numbers for 1, 7 and 30 days plus realtime. Wins, misses and goals are decided by plain rules; the model only writes the summary."],
       ["Riley", "SEO. Runs site crawls through a Python crawler service, diffs issues week over week and checks sitemap, robots.txt, llms.txt and structured data live."],
-      ["Casey", "Writer. Drafts blog outlines and posts in the product's voice, grounded in the analytics, with a quality self-check before saving."],
-      ["Parker", "Publisher. Formats approved drafts and publishes only after an explicit approval flag passes the gate."],
-      ["Alex", "Jobs. Pulls a live freelance job feed, scores fit with an LLM and drafts proposals for the best matches."],
-      ["U-Radar", "Upwork signals. A separate scheduled service that uses the official Upwork MCP server, dedupes results and sends new jobs to its own desk."],
+      ["Casey", "Writer. Only writes about topics that match the brand kit or a real search query, researches the web, drafts in the product's voice and checks internal links. Saves drafts, never publishes."],
+      ["Parker", "Publisher. Formats drafts and can push them to the blog, but only when publishing is switched to live in config. It is locked to draft mode today."],
+      ["Alex", "Jobs. Reads U-Radar's Upwork feed, scores fit with plain rules, and uses a model for job analysis and short proposals with a word limit and banned phrases."],
+      ["U-Radar", "Upwork signals. A separate scheduled service that uses the official Upwork MCP server, stores jobs in Postgres, scores each out of 100 with plain rules and posts the best fits to Slack and its desk."],
     ],
     flow: [
       "Owner message or schedule",
-      "Morgan plans",
+      "Morgan routes it",
       "Specialists call tools",
       "Digest, crawl report or draft",
-      "Human approval",
-      "Publish",
+      "Saved for review",
+      "Publish when switched to live",
     ],
     decisions: [
-      ["Numbers only from tools", "Agents answer from tool results, never from memory. If credentials are missing they say exactly what is missing. With no LLM configured at all, the standup still runs on GA4 numbers with a template narrative."],
-      ["People approve anything public", "Publishing is draft-only by default. The publish agent needs an explicit approve flag, and the publish mode comes from config so a test run can never hit production."],
-      ["The crawler is its own service", "Crawling runs in Python with Scrapling behind a small FastAPI service. If it is down, the SEO agent falls back to a same-host HTML audit instead of failing."],
+      ["Code first, model second", "Morgan routes requests with pattern matching and only calls a model when nothing matches and the message looks like a command. The model's answer is checked against a schema before anything runs."],
+      ["Numbers only from tools", "Numbers come from the GA4 and Search Console APIs, and rules decide what counts as a win or a miss. The model only describes them. If a reply looks wrong, it is replaced with a plain template that still quotes the real numbers."],
+      ["Every AI step has a fallback", "No model configured, the standup runs on a template. Crawler down, the SEO agent runs a simpler same-host audit and says so. The team degrades instead of breaking."],
+      ["Publishing stays locked until approval exists", "Publishing only works when config is switched to live, and it is set to draft everywhere. Nothing has been published automatically. A proper approval screen comes before that switch is flipped."],
       ["Checks are live, not decorative", "Discoverability checks hit the real sitemap, robots.txt, llms.txt and JSON-LD every time. A green tick means the file was actually fetched and parsed."],
       ["Auth that degrades cleanly", "The model client tries a subscription token first, then an API key, then a router, then nothing. Each step down keeps the app working with less."],
-      ["Simple storage first", "Digests, crawls, drafts and the brand kit are Zod-validated JSON on disk. Postgres comes in when the app runs on more than one instance."],
+      ["Simple storage first", "The office keeps digests, crawls, drafts and the brand kit as Zod-validated JSON on disk. U-Radar, which needs history and dedupe, uses Postgres."],
     ],
     next: [
-      "Move storage to Postgres for multi-instance runs.",
-      "Slack triggers so a message can start a mission.",
-      "Scheduled wake-ups so standups run without a click.",
+      "An approval screen for Parker, then switch publishing to live.",
+      "A job queue, so long crawls stop running inside a web request.",
+      "Move the rest of the storage to Postgres.",
+      "Scheduled standups and CI for the check scripts.",
     ],
     related: "ai-route-planning",
   },
