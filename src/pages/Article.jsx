@@ -10,7 +10,7 @@ const inline = (text) =>
     return part;
   });
 
-/** Tiny block parser: "## " headings, "1. " ordered lists, blank-line paragraphs. */
+/** Tiny block parser: "## " headings, "1. " / "- " lists, blank-line paragraphs. */
 const blocks = (md) =>
   md.split(/\n\s*\n/).map((chunk, i) => {
     const text = chunk.trim();
@@ -28,6 +28,15 @@ const blocks = (md) =>
             <li key={line}>{inline(line.replace(/^\d+\. /, ""))}</li>
           ))}
         </ol>
+      );
+    }
+    if (text.startsWith("- ")) {
+      return (
+        <ul key={i} className="list-disc space-y-3 pl-6">
+          {text.split("\n").map((line) => (
+            <li key={line}>{inline(line.replace(/^- /, ""))}</li>
+          ))}
+        </ul>
       );
     }
     return <p key={i}>{inline(text)}</p>;

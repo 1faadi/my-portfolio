@@ -83,6 +83,10 @@ export const CASE_STUDIES = {
       "A planning module for a field-service CRM that proposes who does which visit, in what order, on which day, explains every suggestion in plain English, and lets a manager approve it card by card.",
     role: "AI / Backend Engineer",
     timeline: "May 2026 to Sep 2026",
+    article: {
+      href: "/insights/replaced-or-tools-deleted-fallbacks/",
+      title: "I replaced Google OR-Tools with a greedy route builder. Then I deleted every fallback.",
+    },
     stack: [
       "NestJS",
       "TypeScript",
