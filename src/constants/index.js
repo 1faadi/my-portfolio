@@ -161,6 +161,19 @@ export const EXPERIENCES = [
     technologies: ["Laravel", "PHP", "Livewire", "Tailwind CSS", "REST APIs", "Postman"],
   },
   {
+    year: "Jan 2024 — Feb 2025",
+    role: "Freelance Software Developer",
+    company: "Self-employed",
+    location: "Pakistan",
+    highlights: [
+      "Built and delivered point-of-sale (POS) systems for local vendors using Laravel, PHP and MySQL.",
+      "Delivered desktop/offline POS setups so shops could keep billing on their own machines.",
+      "Worked directly with vendors on requirements, installation, fixes and changes.",
+      "Studied full-time for a BS in Computer Science at NUML alongside freelance work, and self-taught mobile, web and AI development.",
+    ],
+    technologies: ["Laravel", "PHP", "MySQL", "POS", "Desktop apps"],
+  },
+  {
     year: "June 2023 — Jan 2024",
     role: "Associate Software Engineer",
     company: "BXTrack Solutions",

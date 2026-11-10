@@ -62,6 +62,12 @@ EXPERIENCE = [
         "Built and maintained Laravel back-end features and REST APIs across both platforms, testing endpoints with Postman.",
         "Fixed production bugs and shipped features remotely, coordinating with the team on requirements and releases.",
     ]),
+    ("Freelance Software Developer", "Self-employed", None, "Jan 2024 – Feb 2025", [
+        "Built and delivered point-of-sale (POS) systems for local vendors using Laravel, PHP and MySQL.",
+        "Delivered desktop/offline POS setups so shops could keep billing on their own machines.",
+        "Worked directly with vendors on requirements, installation, fixes and changes.",
+        "Studied full-time for a BS in Computer Science at NUML alongside freelance work, and self-taught mobile, web and AI development.",
+    ]),
     ("Associate Software Engineer", "BXTrack Solutions", "Islamabad, Pakistan", "Jun 2023 – Jan 2024", [
         "Designed, built and maintained full-stack web applications with Laravel and React, from database to UI.",
         "Developed component-based React front ends and integrated them with Laravel back ends.",
