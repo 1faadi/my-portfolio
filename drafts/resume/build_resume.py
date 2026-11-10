@@ -32,7 +32,7 @@ SKILLS = [
     ("AI Tooling", "MCP Servers, Claude Code (Skills, Hooks, Sub-agents), n8n Workflow Automation, Vapi Voice AI, "
                    "Agent Orchestration, Cursor"),
     ("Languages", "TypeScript, JavaScript, Python, PHP, SQL, HTML5, CSS3"),
-    ("Frameworks", "Next.js, React, Nest.js, Node.js, FastAPI, Laravel, Tailwind CSS, Bootstrap, jQuery"),
+    ("Frameworks", "Next.js, React, Nest.js, Node.js, FastAPI, Laravel, Livewire, Tailwind CSS, Bootstrap, jQuery"),
     ("Databases & Infra", "PostgreSQL, MySQL, Supabase, Neon, Redis, BullMQ, Docker, OSRM, Vercel, Oracle Cloud"),
     ("Practices", "REST API Design, Third-Party API Integration, Schema Design, Query Optimization, Git, Agile, "
                   "Responsive Design"),
@@ -57,7 +57,7 @@ EXPERIENCE = [
         "Evaluate and adopt emerging AI tooling (LangChain, LangGraph, LlamaIndex, Vercel AI SDK) to improve delivery speed and reliability.",
     ]),
     ("Associate Software Engineer (Contract, Remote)", "BXTrack Solutions", None, "Mar 2025 – Jun 2025", [
-        "Developed and maintained features for AutoBunny.com (autobunny.com), a Canadian online marketplace for new and used vehicles with listings, search filters and dealer inventory, built on Laravel and PHP.",
+        "Developed and maintained features for AutoBunny.com (autobunny.com), a Canadian online marketplace for new and used vehicles with listings, search filters and dealer inventory, built with Laravel, PHP, Livewire and Tailwind CSS.",
         "Worked on AutoBunny Dealer Solutions (autobunnydealersolutions.ca), an all-in-one dealership platform covering inventory management, CRM and lead management, dealer websites and inventory syndication.",
         "Built and maintained Laravel back-end features and REST APIs across both platforms, testing endpoints with Postman.",
         "Fixed production bugs and shipped features remotely, coordinating with the team on requirements and releases.",

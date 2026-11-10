@@ -158,7 +158,7 @@ export const EXPERIENCES = [
       "Built and maintained Laravel back-end features and REST APIs across both platforms, testing endpoints with Postman.",
       "Fixed production bugs and shipped features remotely, coordinating with the team on requirements and releases.",
     ],
-    technologies: ["Laravel", "PHP", "REST APIs", "Postman"],
+    technologies: ["Laravel", "PHP", "Livewire", "Tailwind CSS", "REST APIs", "Postman"],
   },
   {
     year: "June 2023 — Jan 2024",
