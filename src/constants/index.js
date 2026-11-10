@@ -148,6 +148,16 @@ export const EXPERIENCES = [
     ],
   },
   {
+    year: "Mar 2025 — June 2025",
+    role: "Associate Software Engineer (Contract)",
+    company: "BXTrack Solutions",
+    location: "Remote",
+    highlights: [
+      "Built and maintained Laravel back-end features and REST APIs for client projects, tested with Postman.",
+    ],
+    technologies: ["Laravel", "PHP", "REST APIs", "Postman"],
+  },
+  {
     year: "June 2023 — Jan 2024",
     role: "Associate Software Engineer",
     company: "BXTrack Solutions",
@@ -234,7 +244,7 @@ export const PROJECTS = [
     role: "Co-Founder & CTO",
     category: "Product",
     featured: true,
-    year: "Jan 2026 — Present",
+    year: "Feb 2026 — Present",
     image: cover("traceo"),
     description:
       "Chrome extension for one-click bug capture: developers and QA teams inspect CSS, capture visual bugs and record sessions, then share them as actionable reports. Owned end to end — product design, front-end engineering and go-to-market.",
