@@ -57,7 +57,10 @@ EXPERIENCE = [
         "Evaluate and adopt emerging AI tooling (LangChain, LangGraph, LlamaIndex, Vercel AI SDK) to improve delivery speed and reliability.",
     ]),
     ("Associate Software Engineer (Contract, Remote)", "BXTrack Solutions", None, "Mar 2025 – Jun 2025", [
-        "Built and maintained Laravel back-end features and REST APIs for client projects, tested with Postman.",
+        "Developed and maintained features for AutoBunny.com (autobunny.com), a Canadian online marketplace for new and used vehicles with listings, search filters and dealer inventory, built on Laravel and PHP.",
+        "Worked on AutoBunny Dealer Solutions (autobunnydealersolutions.ca), an all-in-one dealership platform covering inventory management, CRM and lead management, dealer websites and inventory syndication.",
+        "Built and maintained Laravel back-end features and REST APIs across both platforms, testing endpoints with Postman.",
+        "Fixed production bugs and shipped features remotely, coordinating with the team on requirements and releases.",
     ]),
     ("Associate Software Engineer", "BXTrack Solutions", "Islamabad, Pakistan", "Jun 2023 – Jan 2024", [
         "Designed, built and maintained full-stack web applications with Laravel and React, from database to UI.",

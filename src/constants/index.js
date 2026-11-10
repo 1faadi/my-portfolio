@@ -153,7 +153,10 @@ export const EXPERIENCES = [
     company: "BXTrack Solutions",
     location: "Remote",
     highlights: [
-      "Built and maintained Laravel back-end features and REST APIs for client projects, tested with Postman.",
+      "Developed and maintained features for AutoBunny.com, a Canadian online marketplace for new and used vehicles with listings, search filters and dealer inventory.",
+      "Worked on AutoBunny Dealer Solutions, an all-in-one dealership platform covering inventory management, CRM and lead management, dealer websites and inventory syndication.",
+      "Built and maintained Laravel back-end features and REST APIs across both platforms, testing endpoints with Postman.",
+      "Fixed production bugs and shipped features remotely, coordinating with the team on requirements and releases.",
     ],
     technologies: ["Laravel", "PHP", "REST APIs", "Postman"],
   },
